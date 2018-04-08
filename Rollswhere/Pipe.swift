@@ -1,6 +1,6 @@
 //
 //  Pipe.swift
-//  Roll Through
+//  Rollswhere
 //
 //  Created by Marko on 08/04/2018.
 //  Copyright © 2018 Marko. All rights reserved.
@@ -18,20 +18,19 @@ class Pipe: SKShapeNode {
         
         let ball = Ball()
         ball.position = initialBallPos
+        ball.zPosition = -1
         
         let fixedBlock = Block(width: 200, height: 50)
         fixedBlock.position.y -= 400
         
-        let pipeBlock = Block(width: 100, height: 400)
-        pipeBlock.physicsBody?.categoryBitMask = 0
+        path = Block(width: 100, height: 400).path
+        physicsBody?.categoryBitMask = 0
         
-        position.y = 400
-        position.x = -300
+        position = .init(x: -300, y: 400)
         
-        pipeBlock.fillColor = .gray
+        fillColor = .gray
         
         addChild(ball)
-        addChild(pipeBlock)
         addChild(fixedBlock)
         
     }

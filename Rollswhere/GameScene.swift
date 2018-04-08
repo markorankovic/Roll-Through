@@ -1,6 +1,6 @@
 //
 //  GameScene.swift
-//  Roll Through
+//  Rollswhere
 //
 //  Created by Marko on 08/04/2018.
 //  Copyright © 2018 Marko. All rights reserved.
@@ -26,6 +26,10 @@ extension GameScene {
         addChild(pipe)
     }
     
+}
+
+extension GameScene {
+    
     override func update(_ currentTime: TimeInterval) {
         let time = Int((currentTime - initialTime).rounded())
         let reachedNextSecond = time != previousTime
@@ -34,7 +38,7 @@ extension GameScene {
             power += 250
         }
     }
-    
+
 }
 
 extension GameScene {
@@ -76,7 +80,7 @@ extension GameScene {
     
     func returnBall() {
         let ball = getBall()
-        ball?.physicsBody?.velocity.dx = 0
+        ball?.physicsBody?.velocity = .init(dx: 0, dy: 0)
         ball?.physicsBody?.angularVelocity = 0
         ball?.position = pipe.initialBallPos
     }
