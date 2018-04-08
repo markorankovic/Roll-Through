@@ -25,7 +25,6 @@ class GameViewController: UIViewController {
             scene.physicsBody = SKPhysicsBody(edgeLoopFrom: scene.frame)
             // Present the scene
             view.presentScene(scene)
-            print(view.bounds)
         }
     }
 

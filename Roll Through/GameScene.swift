@@ -10,23 +10,34 @@ import SpriteKit
 
 class GameScene: SKScene {
     
-    enum RunningState {
-        case started
-        case shooting
-        case released
-    }
-    
     var power: CGFloat = 0
     var runningState: RunningState = .started
     var initialTime: TimeInterval = CACurrentMediaTime()
     var previousTime: Int = -1
-    
+
     let pipe = Pipe()
+    
+}
+
+extension GameScene {
     
     override func didMove(to view: SKView) {
         backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 1)
         addChild(pipe)
     }
+    
+    override func update(_ currentTime: TimeInterval) {
+        let time = Int((currentTime - initialTime).rounded())
+        let reachedNextSecond = time != previousTime
+        if runningState == .shooting && time % 1 == 0 && reachedNextSecond {
+            previousTime = time
+            power += 250
+        }
+    }
+    
+}
+
+extension GameScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if runningState == .started {
@@ -45,6 +56,10 @@ class GameScene: SKScene {
             shootBall()
         }
     }
+    
+}
+
+extension GameScene {
     
     func getBall() -> Ball? {
         for pipeNode in pipe.children {
@@ -66,13 +81,14 @@ class GameScene: SKScene {
         ball?.position = pipe.initialBallPos
     }
     
-    override func update(_ currentTime: TimeInterval) {
-        let time = Int((currentTime - initialTime).rounded())
-        let reachedNextSecond = time != previousTime
-        if runningState == .shooting && time % 1 == 0 && reachedNextSecond {
-            previousTime = time
-            power += 250
-        }
+}
+
+extension GameScene {
+    
+    enum RunningState {
+        case started
+        case shooting
+        case released
     }
     
 }
