@@ -8,31 +8,29 @@
 
 import SpriteKit
 
-class Pipe: SKShapeNode {
-    
-    let initialBallPos: CGPoint = .init(x: 0, y: -200)
-    
+class Pipe/*Node*/: SKShapeNode {
+        
     override init() {
         
         super.init()
         
-        let ball = Ball()
-        ball.position = initialBallPos
-        ball.zPosition = -1
+    }
+    
+    convenience init(position: CGPoint) {
+        self.init()
         
-        let fixedBlock = Block(width: 200, height: 50)
-        fixedBlock.position.y -= 400
+        self.position = position
+        let width: CGFloat = 120
+        let height: CGFloat = 400
+        path = Block(position: position, size: CGSize(width: width, height: height)).path
         
-        path = Block(width: 100, height: 400).path
-        physicsBody?.categoryBitMask = 0
+        let physicsbody1 = SKPhysicsBody(edgeFrom: CGPoint(x: -width/2, y: height/2), to: CGPoint(x: -width/2, y: -height/2))
+        let physicsbody2 = SKPhysicsBody(edgeFrom: CGPoint(x: width/2, y: height/2), to: CGPoint(x: width/2, y: -height/2))
         
-        position = .init(x: -300, y: 400)
+        physicsBody = SKPhysicsBody(bodies: [physicsbody1, physicsbody2])
+        physicsBody?.isDynamic = false
         
         fillColor = .gray
-        
-        addChild(ball)
-        addChild(fixedBlock)
-        
     }
     
     required init?(coder aDecoder: NSCoder) {

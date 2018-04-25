@@ -8,7 +8,6 @@
 
 import UIKit
 import SpriteKit
-import GameplayKit
 
 class GameViewController: UIViewController {
 
@@ -16,14 +15,7 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
             let scene = GameScene()
-            // Set the scale mode to scale to fit the window
-            scene.size = view.bounds.size
-            scene.scaleMode = .aspectFill
-            scene.anchorPoint = .init(x: 0.5, y: 0.5)
-            scene.physicsBody = SKPhysicsBody(edgeLoopFrom: scene.frame)
-            // Present the scene
             view.presentScene(scene)
         }
     }

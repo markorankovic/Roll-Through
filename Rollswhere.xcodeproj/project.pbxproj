@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ADBD786320858DC200F0AE3E /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBD786220858DC200F0AE3E /* Level.swift */; };
 		ADC34805207A41670031DC16 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC34804207A41670031DC16 /* Ball.swift */; };
 		ADC34807207A47820031DC16 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC34806207A47820031DC16 /* Block.swift */; };
 		ADC34809207A94AC0031DC16 /* Pipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC34808207A94AC0031DC16 /* Pipe.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ADBD786220858DC200F0AE3E /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		ADC34804207A41670031DC16 /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 		ADC34806207A47820031DC16 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		ADC34808207A94AC0031DC16 /* Pipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pipe.swift; sourceTree = "<group>"; };
@@ -30,6 +32,7 @@
 		ADEC4F05207A3C2100C78ED9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADEC4F08207A3C2100C78ED9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADEC4F0A207A3C2100C78ED9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADF37023207B8E930068F826 /* testCode.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = testCode.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +49,7 @@
 		ADEC4EEC207A3C2000C78ED9 = {
 			isa = PBXGroup;
 			children = (
+				ADF37023207B8E930068F826 /* testCode.playground */,
 				ADEC4EF7207A3C2000C78ED9 /* Rollswhere */,
 				ADEC4EF6207A3C2000C78ED9 /* Products */,
 			);
@@ -62,16 +66,17 @@
 		ADEC4EF7207A3C2000C78ED9 /* Rollswhere */ = {
 			isa = PBXGroup;
 			children = (
+				ADEC4F0A207A3C2100C78ED9 /* Info.plist */,
 				ADEC4EF8207A3C2000C78ED9 /* AppDelegate.swift */,
-				ADC34808207A94AC0031DC16 /* Pipe.swift */,
-				ADC34806207A47820031DC16 /* Block.swift */,
 				ADC34804207A41670031DC16 /* Ball.swift */,
+				ADC34806207A47820031DC16 /* Block.swift */,
 				ADEC4EFE207A3C2000C78ED9 /* GameScene.swift */,
 				ADEC4F00207A3C2000C78ED9 /* GameViewController.swift */,
-				ADEC4F02207A3C2000C78ED9 /* Main.storyboard */,
+				ADBD786220858DC200F0AE3E /* Level.swift */,
+				ADC34808207A94AC0031DC16 /* Pipe.swift */,
 				ADEC4F05207A3C2100C78ED9 /* Assets.xcassets */,
 				ADEC4F07207A3C2100C78ED9 /* LaunchScreen.storyboard */,
-				ADEC4F0A207A3C2100C78ED9 /* Info.plist */,
+				ADEC4F02207A3C2000C78ED9 /* Main.storyboard */,
 			);
 			path = Rollswhere;
 			sourceTree = "<group>";
@@ -148,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADC34805207A41670031DC16 /* Ball.swift in Sources */,
+				ADBD786320858DC200F0AE3E /* Level.swift in Sources */,
 				ADEC4EFF207A3C2000C78ED9 /* GameScene.swift in Sources */,
 				ADC34807207A47820031DC16 /* Block.swift in Sources */,
 				ADC34809207A94AC0031DC16 /* Pipe.swift in Sources */,
@@ -299,6 +305,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 83XX9TWPTZ;
 				INFOPLIST_FILE = "$(SRCROOT)/Rollswhere/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -317,6 +324,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 83XX9TWPTZ;
 				INFOPLIST_FILE = "$(SRCROOT)/Rollswhere/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

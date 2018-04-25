@@ -8,10 +8,10 @@
 
 import SpriteKit
 
-class Block: SKShapeNode {
+class Block/*Node*/: SKShapeNode {
     
     var fixed = false
-    
+        
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -20,11 +20,14 @@ class Block: SKShapeNode {
         super.init()
     }
     
-    convenience init(width: CGFloat, height: CGFloat) {
+    convenience init(position: CGPoint, size: CGSize, fixed: Bool = false) {
         self.init()
-        path = SKShapeNode(rectOf: CGSize(width: width, height: height)).path
+        fillColor = fixed ? .red : .blue
+        path = SKShapeNode(rectOf: size).path
         physicsBody = SKPhysicsBody(edgeLoopFrom: path!)
         physicsBody?.affectedByGravity = false
+        self.fixed = fixed
+        self.position = position
     }
     
 }
