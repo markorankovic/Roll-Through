@@ -67,7 +67,7 @@ extension GameScene {
         size = view.bounds.size
         scaleMode = .aspectFill
         anchorPoint = .init(x: 0.5, y: 0.5) 
-        physicsBody = SKPhysicsBody(edgeLoopFrom: .init(origin: .init(x: -view.frame.width/2, y: -view.frame.height/2), size: view.frame.size))
+        //physicsBody = SKPhysicsBody(edgeLoopFrom: .init(origin: .init(x: -view.frame.width/2, y: -view.frame.height/2), size: view.frame.size))
     }
     
 }
