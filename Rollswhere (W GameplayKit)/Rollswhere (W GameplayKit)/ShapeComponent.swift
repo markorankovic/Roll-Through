@@ -21,4 +21,5 @@ class ShapeComponent: GKComponent {
         self.shapeNode = shapeNode
     }
     
-} 
+}
+

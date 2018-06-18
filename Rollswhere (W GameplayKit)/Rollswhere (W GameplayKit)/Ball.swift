@@ -25,6 +25,7 @@ class Ball: GKEntity {
         shapeNode.addChild(powerBar)
         powerBar.strokeColor = .red
         powerBar.lineWidth = 0
+        powerBar.zPosition = 10 
         shapeNode.physicsBody = SKPhysicsBody(circleOfRadius: radius)
         shapeNode.physicsBody?.restitution = 0.4
         shapeNode.strokeColor = .black

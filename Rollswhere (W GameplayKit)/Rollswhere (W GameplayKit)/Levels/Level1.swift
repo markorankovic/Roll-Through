@@ -9,14 +9,13 @@
 import SpriteKit
 
 
-private let fixedBlock = BounceBlock(position: .init(x: -300, y: -200), size: CGSize(width: 200, height: 50), fillColor: .red)
+private let fixedBlock = BounceBlock(position: .init(x: -300, y: 100), size: CGSize(width: 200, height: 50), fillColor: .red)
 private let entryPipe = PipeBlock(position: .init(x: -300, y: 600), size: .init(width: 150, height: 400), fillColor: .gray)
-private let exitPipe = PipeBlock(position: .init(x: 400, y: -200), size: .init(width: 150, height: 1000), fillColor: .gray)
-private let block = BounceBlock(position: .init(x: 0, y: 0) , size: CGSize(width: 200, height: 50), fillColor: .green)
+private let exitPipe = PipeBlock(position: .init(x: 400, y: -450), size: .init(width: 150, height: 500), fillColor: .gray)
 
 let level1 = Level( 
     fixedPlatform: fixedBlock,
-    blocks: [block],
+    blocks: [],
     obstacles: [],
     entryPipe: entryPipe,
     exitPipe: exitPipe

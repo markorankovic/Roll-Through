@@ -16,12 +16,12 @@ class GameScene: SKScene {
     var draggingBlock: SKShapeNode?
     
     let ball = Ball(position: CGPoint(), radius: 50, fillColor: .brown)
-    var level: Level = level3 
+    var level: Level = level1
         
     override func didMove(to view: SKView) { 
         backgroundColor = .blue
         entityManager = EnitityManager(scene: self)
-    
+     
         entityManager.add(entity: ball)
         
         loadLevel()
@@ -29,6 +29,7 @@ class GameScene: SKScene {
         stateMachine = GKStateMachine(states: [
             WaitingState(scene: self),
             ShootingState(scene: self),
+            TransitionState(scene: self),
             ReturnState(scene: self),
             PauseState(scene: self),
         ])
@@ -49,6 +50,32 @@ extension GameScene {
         for obstacle in level.obstacles { 
             entityManager.add(entity: obstacle)
         }
+    }
+    
+    func unloadLevel() {
+        entityManager.remove(entity: level.fixedPlatform)
+        entityManager.remove(entity: level.entryPipe)
+        entityManager.remove(entity: level.exitPipe)
+        for block in level.blocks {
+            entityManager.remove(entity: block)
+        }
+        for obstacle in level.obstacles {
+            entityManager.remove(entity: obstacle)
+        }
+    } 
+    
+    func moveToNextLevel() { 
+        let index = levels.index(where: { $0 === level })
+        if let levelNumber = index {
+            unloadLevel()
+            level = levelNumber + 1 < levels.count ? levels[levelNumber + 1] : level1
+            loadLevel()
+            stateMachine.enter(ReturnState.self)
+        }
+    }
+    
+    func transitionToNextLevel() {
+        
     }
 
 }

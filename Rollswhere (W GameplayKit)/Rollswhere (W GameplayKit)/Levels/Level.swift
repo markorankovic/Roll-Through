@@ -12,7 +12,7 @@ class Level {
     let blocks: [BounceBlock]
     let obstacles: [Obstacle] 
     let entryPipe: PipeBlock
-    let exitPipe: PipeBlock
+    let exitPipe: PipeBlock 
     
     init(fixedPlatform: BounceBlock, blocks: [BounceBlock], obstacles: [Obstacle], entryPipe: PipeBlock, exitPipe: PipeBlock) {
         self.fixedPlatform = fixedPlatform 
@@ -23,3 +23,11 @@ class Level {
     } 
     
 }
+
+let levels: [Level] = [
+    level1,
+    level2, 
+    level3,
+    level4
+]
+

@@ -10,8 +10,23 @@ import GameplayKit
 
 class ShootingState: GameState {
     
+    var ballInsideExitPipe: Bool {
+        if let ballNode = scene.ball.component(ofType: ShapeComponent.self)?.shapeNode {
+            if let exitPipeNode = scene.level.exitPipe.component(ofType: ShapeComponent.self)?.shapeNode {
+                let transformedPos = CGPoint(x: ballNode.position.x - exitPipeNode.position.x, y: ballNode.position.y - exitPipeNode.position.y).applying(CGAffineTransform(rotationAngle: -exitPipeNode.zRotation))
+                let ballRadius = ballNode.frame.width / 2
+                let ballTransformedPos = CGPoint(x: transformedPos.x + exitPipeNode.position.x - ballRadius, y: transformedPos.y + exitPipeNode.position.y - ballRadius)
+                let ballRect = CGRect(origin: ballTransformedPos, size: ballNode.frame.size)
+                let pipeRect = exitPipeNode.frame
+                return pipeRect.contains(ballRect)
+            } 
+        }
+        return false
+    }
+    
+    
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
-        return stateClass == ReturnState.self
+        return stateClass == ReturnState.self || stateClass == TransitionState.self
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -39,6 +54,12 @@ class ShootingState: GameState {
             shoot(ballBody: ballNode.physicsBody!)
         } 
         print("Entered shooting")
+    }
+    
+    override func update(deltaTime seconds: TimeInterval) {
+        if ballInsideExitPipe {
+            stateMachine?.enter(TransitionState.self)   
+        }
     }
     
 } 

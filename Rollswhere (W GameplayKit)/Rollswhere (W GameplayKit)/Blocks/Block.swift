@@ -22,6 +22,7 @@ class Block: GKEntity {
         shapeNode.strokeColor = .black
         shapeNode.fillColor = fillColor
         shapeNode.position = position
+        shapeNode.zPosition = 9 
         addComponent(ShapeComponent(shapeNode: shapeNode)) 
     }
     
