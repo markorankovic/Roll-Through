@@ -11,10 +11,8 @@ import GameplayKit
 class ReturnState: GameState {
     
     var ballAtRest: Bool {
-        if let ballNode = scene.ball.component(ofType: ShapeComponent.self)?.shapeNode {
-            return ballNode.physicsBody!.isResting
-        }
-        return false
+        let ball = scene.ball 
+        return ball.physicsBody!.isResting
     }
     
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
@@ -22,29 +20,26 @@ class ReturnState: GameState {
     }
     
     func returnBall() {
-        if let ballNode = scene.ball.component(ofType: ShapeComponent.self)?.shapeNode {
-            if let entryPipeNode = scene.level.entryPipe.component(ofType: ShapeComponent.self)?.shapeNode {
-                ballNode.physicsBody?.velocity = .init()
-                ballNode.physicsBody?.angularVelocity = .init()
-                ballNode.position = entryPipeNode.position 
-                ballNode.zRotation = 0 
-            }
-        }
+        let ball = scene.ball
+        let entryPipe = scene.level.entryPipe
+        ball.physicsBody?.velocity = .init()
+        ball.physicsBody?.angularVelocity = .init()
+        ball.position = entryPipe.position
+        print(ball.position) 
+        ball.zRotation = 0
     }
     
     func setMoveableBlocksToNotCollide() {
         for block in scene.level.blocks {
-            if let blockNode = block.component(ofType: ShapeComponent.self)?.shapeNode {
-                blockNode.physicsBody!.categoryBitMask = 0
-            }
-        } 
+            block.physicsBody!.categoryBitMask = 0
+        }
     }
     
     override func didEnter(from previousState: GKState?) {
         setMoveableBlocksToNotCollide()
         returnBall()
         print("Entered return")
-    }
+    } 
     
     override func update(deltaTime seconds: TimeInterval) {
         if ballAtRest {

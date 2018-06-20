@@ -11,18 +11,15 @@ import GameplayKit
 class ShootingState: GameState {
     
     var ballInsideExitPipe: Bool {
-        if let ballNode = scene.ball.component(ofType: ShapeComponent.self)?.shapeNode {
-            if let exitPipeNode = scene.level.exitPipe.component(ofType: ShapeComponent.self)?.shapeNode {
-                let transformedPos = CGPoint(x: ballNode.position.x - exitPipeNode.position.x, y: ballNode.position.y - exitPipeNode.position.y).applying(CGAffineTransform(rotationAngle: -exitPipeNode.zRotation))
-                let ballRadius = ballNode.frame.width / 2
-                let ballTransformedPos = CGPoint(x: transformedPos.x + exitPipeNode.position.x - ballRadius, y: transformedPos.y + exitPipeNode.position.y - ballRadius)
-                let ballRect = CGRect(origin: ballTransformedPos, size: ballNode.frame.size)
-                let pipeRect = exitPipeNode.frame
-                return pipeRect.contains(ballRect)
-            } 
-        }
-        return false
-    }
+        let ballNode = scene.ball
+        let exitPipeNode = scene.level.exitPipe
+        let transformedPos = CGPoint(x: ballNode.position.x - exitPipeNode.position.x, y: ballNode.position.y - exitPipeNode.position.y).applying(CGAffineTransform(rotationAngle: -exitPipeNode.zRotation))
+        let ballRadius = ballNode.frame.width / 2
+        let ballTransformedPos = CGPoint(x: transformedPos.x + exitPipeNode.position.x - ballRadius, y: transformedPos.y + exitPipeNode.position.y - ballRadius)
+        let ballRect = CGRect(origin: ballTransformedPos, size: ballNode.frame.size)
+        let pipeRect = exitPipeNode.frame
+        return pipeRect.contains(ballRect)
+    } 
     
     
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
@@ -34,15 +31,15 @@ class ShootingState: GameState {
     }
         
     func shoot(ballBody: SKPhysicsBody) {
-        ballBody.velocity.dx = scene.ball.power 
-        scene.ball.power = 0
+        ballBody.velocity.dx = scene.power
+        scene.power = 0
     }
     
     func setMoveableBlocksToCollide() {
         for block in scene.level.blocks {
-            if let blockNode = block.component(ofType: ShapeComponent.self)?.shapeNode {
-                if let ballNode = scene.ball.component(ofType: ShapeComponent.self)?.shapeNode {
-                    blockNode.physicsBody!.categoryBitMask = ballNode.physicsBody!.collisionBitMask 
+            if let blockBody = block.physicsBody {
+                if let ballBody = scene.ball.physicsBody {
+                    blockBody.categoryBitMask = ballBody.collisionBitMask
                 } 
             }
         }
@@ -50,9 +47,9 @@ class ShootingState: GameState {
 
     override func didEnter(from previousState: GKState?) {
         setMoveableBlocksToCollide()
-        if let ballNode = scene.ball.component(ofType: ShapeComponent.self)?.shapeNode {
-            shoot(ballBody: ballNode.physicsBody!)
-        } 
+        if let ballBody = scene.ball.physicsBody {
+            shoot(ballBody: ballBody)
+        }
         print("Entered shooting")
     }
     

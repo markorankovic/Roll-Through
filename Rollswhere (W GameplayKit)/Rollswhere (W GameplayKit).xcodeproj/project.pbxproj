@@ -18,18 +18,11 @@
 		AD84152520C19F990053F21A /* PauseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84152420C19F990053F21A /* PauseState.swift */; };
 		AD84152720C1A11E0053F21A /* ReturnState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84152620C1A11E0053F21A /* ReturnState.swift */; };
 		AD84152920C1A1440053F21A /* ShootingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84152820C1A1440053F21A /* ShootingState.swift */; };
-		AD84152B20C1A29F0053F21A /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84152A20C1A29F0053F21A /* Ball.swift */; };
-		AD84152D20C1A2CA0053F21A /* ShapeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84152C20C1A2CA0053F21A /* ShapeComponent.swift */; };
-		AD84152F20C1A2F80053F21A /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84152E20C1A2F80053F21A /* Block.swift */; };
-		AD84153120C1A32B0053F21A /* EnitityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84153020C1A32B0053F21A /* EnitityManager.swift */; };
-		AD84153420C1BB130053F21A /* BounceBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84153320C1BB130053F21A /* BounceBlock.swift */; };
-		AD84153620C1BCD10053F21A /* PipeBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84153520C1BCD10053F21A /* PipeBlock.swift */; };
 		ADA1D29220D0C2CA00EE11BE /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA1D29120D0C2CA00EE11BE /* Level.swift */; };
 		ADA1D29420D0C3B600EE11BE /* Level1.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA1D29320D0C3B600EE11BE /* Level1.swift */; };
-		ADB76B2A20D451CB006CDD84 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = ADB76B2920D451CB006CDD84 /* GameScene.sks */; };
+		ADB76B2A20D451CB006CDD84 /* Level1.sks in Resources */ = {isa = PBXBuildFile; fileRef = ADB76B2920D451CB006CDD84 /* Level1.sks */; };
 		ADD6925A20D155D8004327F8 /* Level2.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD6925920D155D8004327F8 /* Level2.swift */; };
 		ADD6925C20D168A8004327F8 /* Level3.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD6925B20D168A8004327F8 /* Level3.swift */; };
-		ADD6925E20D169F9004327F8 /* Obstacle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD6925D20D169F9004327F8 /* Obstacle.swift */; };
 		ADD6926020D17D79004327F8 /* Level4.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD6925F20D17D79004327F8 /* Level4.swift */; };
 		ADD6926220D192C9004327F8 /* TransitionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD6926120D192C9004327F8 /* TransitionState.swift */; };
 /* End PBXBuildFile section */
@@ -48,18 +41,11 @@
 		AD84152420C19F990053F21A /* PauseState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseState.swift; sourceTree = "<group>"; };
 		AD84152620C1A11E0053F21A /* ReturnState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnState.swift; sourceTree = "<group>"; };
 		AD84152820C1A1440053F21A /* ShootingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShootingState.swift; sourceTree = "<group>"; };
-		AD84152A20C1A29F0053F21A /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
-		AD84152C20C1A2CA0053F21A /* ShapeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeComponent.swift; sourceTree = "<group>"; };
-		AD84152E20C1A2F80053F21A /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
-		AD84153020C1A32B0053F21A /* EnitityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnitityManager.swift; sourceTree = "<group>"; };
-		AD84153320C1BB130053F21A /* BounceBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BounceBlock.swift; sourceTree = "<group>"; };
-		AD84153520C1BCD10053F21A /* PipeBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipeBlock.swift; sourceTree = "<group>"; };
 		ADA1D29120D0C2CA00EE11BE /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		ADA1D29320D0C3B600EE11BE /* Level1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level1.swift; sourceTree = "<group>"; };
-		ADB76B2920D451CB006CDD84 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		ADB76B2920D451CB006CDD84 /* Level1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level1.sks; sourceTree = "<group>"; };
 		ADD6925920D155D8004327F8 /* Level2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level2.swift; sourceTree = "<group>"; };
 		ADD6925B20D168A8004327F8 /* Level3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level3.swift; sourceTree = "<group>"; };
-		ADD6925D20D169F9004327F8 /* Obstacle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obstacle.swift; sourceTree = "<group>"; };
 		ADD6925F20D17D79004327F8 /* Level4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level4.swift; sourceTree = "<group>"; };
 		ADD6926120D192C9004327F8 /* TransitionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,7 +64,7 @@
 		AD8414F920C19BE60053F21A = {
 			isa = PBXGroup;
 			children = (
-				ADB76B2920D451CB006CDD84 /* GameScene.sks */,
+				ADB76B2920D451CB006CDD84 /* Level1.sks */,
 				AD84150420C19BE60053F21A /* Rollswhere (W GameplayKit) */,
 				AD84150320C19BE60053F21A /* Products */,
 			);
@@ -95,12 +81,7 @@
 		AD84150420C19BE60053F21A /* Rollswhere (W GameplayKit) */ = {
 			isa = PBXGroup;
 			children = (
-				AD84153020C1A32B0053F21A /* EnitityManager.swift */,
-				AD84152C20C1A2CA0053F21A /* ShapeComponent.swift */,
-				AD84152A20C1A29F0053F21A /* Ball.swift */,
-				ADD6925D20D169F9004327F8 /* Obstacle.swift */,
 				ADA1D29020D0C2BA00EE11BE /* Levels */,
-				AD84153220C1BA270053F21A /* Blocks */,
 				AD84151D20C19D300053F21A /* GameStates */,
 				AD84150520C19BE60053F21A /* AppDelegate.swift */,
 				AD84150B20C19BE60053F21A /* GameScene.swift */,
@@ -124,16 +105,6 @@
 				ADD6926120D192C9004327F8 /* TransitionState.swift */,
 			);
 			path = GameStates;
-			sourceTree = "<group>";
-		};
-		AD84153220C1BA270053F21A /* Blocks */ = {
-			isa = PBXGroup;
-			children = (
-				AD84152E20C1A2F80053F21A /* Block.swift */,
-				AD84153320C1BB130053F21A /* BounceBlock.swift */,
-				AD84153520C1BCD10053F21A /* PipeBlock.swift */,
-			);
-			path = Blocks;
 			sourceTree = "<group>";
 		};
 		ADA1D29020D0C2BA00EE11BE /* Levels */ = {
@@ -206,7 +177,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADB76B2A20D451CB006CDD84 /* GameScene.sks in Resources */,
+				ADB76B2A20D451CB006CDD84 /* Level1.sks in Resources */,
 				AD84151120C19BE60053F21A /* Main.storyboard in Resources */,
 				AD84151320C19BE70053F21A /* Assets.xcassets in Resources */,
 				AD84151620C19BE70053F21A /* LaunchScreen.storyboard in Resources */,
@@ -223,7 +194,6 @@
 				ADD6925C20D168A8004327F8 /* Level3.swift in Sources */,
 				ADA1D29420D0C3B600EE11BE /* Level1.swift in Sources */,
 				AD84150C20C19BE60053F21A /* GameScene.swift in Sources */,
-				AD84152F20C1A2F80053F21A /* Block.swift in Sources */,
 				AD84151F20C19D4A0053F21A /* GameState.swift in Sources */,
 				ADA1D29220D0C2CA00EE11BE /* Level.swift in Sources */,
 				AD84152920C1A1440053F21A /* ShootingState.swift in Sources */,
@@ -231,16 +201,10 @@
 				AD84152520C19F990053F21A /* PauseState.swift in Sources */,
 				AD84150E20C19BE60053F21A /* GameViewController.swift in Sources */,
 				AD84150620C19BE60053F21A /* AppDelegate.swift in Sources */,
-				AD84152B20C1A29F0053F21A /* Ball.swift in Sources */,
-				AD84153120C1A32B0053F21A /* EnitityManager.swift in Sources */,
 				AD84152720C1A11E0053F21A /* ReturnState.swift in Sources */,
-				AD84153420C1BB130053F21A /* BounceBlock.swift in Sources */,
-				ADD6925E20D169F9004327F8 /* Obstacle.swift in Sources */,
 				ADD6926020D17D79004327F8 /* Level4.swift in Sources */,
 				ADD6925A20D155D8004327F8 /* Level2.swift in Sources */,
-				AD84153620C1BCD10053F21A /* PipeBlock.swift in Sources */,
 				AD84152320C19F530053F21A /* WaitingState.swift in Sources */,
-				AD84152D20C1A2CA0053F21A /* ShapeComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

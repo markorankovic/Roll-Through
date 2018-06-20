@@ -48,16 +48,11 @@ class WaitingState: GameState {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let ballNode = scene.ball.component(ofType: ShapeComponent.self)?.shapeNode {
-            let selectedNodes = scene.nodes(at: touches.first!.location(in: scene))
-            applyingPowerToBall = selectedNodes.first == ballNode
-        }
-        
-        let touchLocation = touches.first!.location(in: scene)
-        let selectedNodes = scene.nodes(at: touchLocation)
+        let selectedNodes = scene.nodes(at: touches.first!.location(in: scene))
+        applyingPowerToBall = selectedNodes.first == scene.ball
         if let selectedNode = selectedNodes.first as? SKShapeNode {
             for block in scene.level.blocks {
-                if selectedNode == block.component(ofType: ShapeComponent.self)?.shapeNode {
+                if selectedNode == block {
                     draggingBlock = selectedNode 
                 }
             }
@@ -76,17 +71,13 @@ class WaitingState: GameState {
         
         draggingBlock = nil
         
-        if let ballNode = scene.ball.component(ofType: ShapeComponent.self)?.shapeNode {
-            
-            if let powerBar = ballNode.children.first as? SKShapeNode {
-                powerBar.lineWidth = 0
-            } 
-
-            if applyingPowerToBall && ballNode.physicsBody!.allContactedBodies().count == 1 && scene.ball.power > 0 {
-                stateMachine?.enter(ShootingState.self)
-            }
-            
+        if let powerBar = scene.ball.children.first as? SKShapeNode {
+            powerBar.lineWidth = 0
         }
+        
+        if applyingPowerToBall && scene.ball.physicsBody!.allContactedBodies().count == 1 && scene.power > 0 {
+            stateMachine?.enter(ShootingState.self)
+        } 
         
         applyingPowerToBall = false
 
@@ -97,24 +88,20 @@ class WaitingState: GameState {
     }
     
     func increaseBallPower() {
-        scene.ball.power += 50
+        scene.power += 50
     }
     
     func increasePowerBarWidth() {
-        if let ballNode = scene.ball.component(ofType: ShapeComponent.self)?.shapeNode {
-            if let powerBar = ballNode.children.first as? SKShapeNode {
-                powerBar.lineWidth += 1
-            }
+        if let powerBar = scene.ball.children.first as? SKShapeNode {
+            powerBar.lineWidth += 1
         }
     }
     
     override func update(deltaTime seconds: TimeInterval) {
-        if let ballNode = scene.ball.component(ofType: ShapeComponent.self)?.shapeNode {
-            if applyingPowerToBall && ballNode.physicsBody!.allContactedBodies().count == 1 {
-                increaseBallPower()
-                increasePowerBarWidth()
-                print("Power: \(scene.ball.power)")
-            }
+        if applyingPowerToBall && scene.ball.physicsBody!.allContactedBodies().count == 1 {
+            increaseBallPower()
+            increasePowerBarWidth()
+            print("Power: \(scene.power)")
         }
     }
     

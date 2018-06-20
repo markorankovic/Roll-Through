@@ -11,19 +11,30 @@ import GameplayKit
 
 class GameScene: SKScene {
      
-    var entityManager: EnitityManager!
     var stateMachine: GKStateMachine!
     var draggingBlock: SKShapeNode?
     
-    let ball = Ball(position: CGPoint(), radius: 50, fillColor: .brown)
-    var level: Level = level1
-        
+    let ball: SKShapeNode = {
+        () in let shapeNode = SKShapeNode(circleOfRadius: 50)
+        shapeNode.fillColor = .brown
+        shapeNode.strokeColor = .black
+        let powerBar = SKShapeNode(rectOf: .init(width: 0, height: 10))
+        powerBar.position.y = 50 + 20
+        powerBar.name = "power-bar"
+        shapeNode.addChild(powerBar)
+        powerBar.strokeColor = .red
+        powerBar.lineWidth = 0
+        powerBar.zPosition = 10
+        let physicsBody = SKPhysicsBody(circleOfRadius: 50)
+        shapeNode.physicsBody = physicsBody 
+        return shapeNode 
+    }()
+    var power: CGFloat = 0
+    var level: Level = level4  
+       
     override func didMove(to view: SKView) { 
         backgroundColor = .blue
-        entityManager = EnitityManager(scene: self)
-     
-        entityManager.add(entity: ball)
-        
+        addChild(ball)
         loadLevel()
         
         stateMachine = GKStateMachine(states: [
@@ -33,7 +44,7 @@ class GameScene: SKScene {
             ReturnState(scene: self),
             PauseState(scene: self),
         ])
-        stateMachine.enter(ReturnState.self)
+        stateMachine.enter(ReturnState.self) 
     }
     
 }
@@ -41,26 +52,26 @@ class GameScene: SKScene {
 extension GameScene {
     
     func loadLevel() {
-        entityManager.add(entity: level.fixedPlatform)
-        entityManager.add(entity: level.entryPipe)
-        entityManager.add(entity: level.exitPipe)
+        addChild(level.fixedPlatform)
+        addChild(level.entryPipe)
+        addChild(level.exitPipe)
         for block in level.blocks {
-            entityManager.add(entity: block)
+            addChild(block)
         }
         for obstacle in level.obstacles { 
-            entityManager.add(entity: obstacle)
+            addChild(obstacle)
         }
     }
     
     func unloadLevel() {
-        entityManager.remove(entity: level.fixedPlatform)
-        entityManager.remove(entity: level.entryPipe)
-        entityManager.remove(entity: level.exitPipe)
+        level.fixedPlatform.removeFromParent()
+        level.entryPipe.removeFromParent()
+        level.exitPipe.removeFromParent()
         for block in level.blocks {
-            entityManager.remove(entity: block)
+            block.removeFromParent()
         }
         for obstacle in level.obstacles {
-            entityManager.remove(entity: obstacle)
+            obstacle.removeFromParent() 
         }
     } 
     

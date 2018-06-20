@@ -8,10 +8,37 @@
 
 import SpriteKit
 
-
-private let fixedBlock = BounceBlock(position: .init(x: -300, y: 100), size: CGSize(width: 200, height: 50), fillColor: .red)
-private let entryPipe = PipeBlock(position: .init(x: -300, y: 600), size: .init(width: 150, height: 400), fillColor: .gray)
-private let exitPipe = PipeBlock(position: .init(x: 400, y: -450), size: .init(width: 150, height: 500), fillColor: .gray)
+private let fixedBlock: SKShapeNode = {
+    () in let shapeNode = SKShapeNode(rectOf: CGSize(width: 200, height: 50))
+    shapeNode.fillColor = .red
+    shapeNode.strokeColor = .black
+    shapeNode.position = CGPoint(x: -300, y: 100)
+    shapeNode.physicsBody = SKPhysicsBody(edgeLoopFrom: shapeNode.path!)
+    shapeNode.physicsBody?.pinned = true
+    return shapeNode
+}()
+private let entryPipe: SKShapeNode = {
+    () in let shapeNode = SKShapeNode(rectOf: CGSize(width: 150, height: 400))
+    shapeNode.fillColor = .gray
+    shapeNode.strokeColor = .black
+    shapeNode.position = CGPoint(x: -300, y: 600)
+    let body1 = SKPhysicsBody(edgeFrom: CGPoint(x: -75, y: 250), to: CGPoint(x: -75, y: -250))
+    let body2 = SKPhysicsBody(edgeFrom: CGPoint(x: 75, y: 250), to: CGPoint(x: 75, y: -250))
+    shapeNode.physicsBody = SKPhysicsBody(bodies: [body1, body2])
+    shapeNode.physicsBody?.pinned = true
+    return shapeNode 
+}()
+private let exitPipe: SKShapeNode = {
+    () in let shapeNode = SKShapeNode(rectOf: CGSize(width: 150, height: 500))
+    shapeNode.fillColor = .gray
+    shapeNode.strokeColor = .black
+    let body1 = SKPhysicsBody(edgeFrom: CGPoint(x: -75, y: 250), to: CGPoint(x: -75, y: -250))
+    let body2 = SKPhysicsBody(edgeFrom: CGPoint(x: 75, y: 250), to: CGPoint(x: 75, y: -250))
+    shapeNode.physicsBody = SKPhysicsBody(bodies: [body1, body2])
+    shapeNode.position = CGPoint(x: 400, y: -450)
+    shapeNode.physicsBody?.pinned = true
+    return shapeNode
+}()
 
 let level1 = Level( 
     fixedPlatform: fixedBlock,

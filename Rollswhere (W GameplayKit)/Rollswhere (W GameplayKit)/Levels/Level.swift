@@ -6,15 +6,17 @@
 //  Copyright © 2018 Marko. All rights reserved.
 //
 
+import SpriteKit
+
 class Level {
     
-    let fixedPlatform: BounceBlock
-    let blocks: [BounceBlock]
-    let obstacles: [Obstacle] 
-    let entryPipe: PipeBlock
-    let exitPipe: PipeBlock 
+    let fixedPlatform: SKShapeNode
+    let blocks: [SKShapeNode]
+    let obstacles: [SKShapeNode]
+    let entryPipe: SKShapeNode
+    let exitPipe: SKShapeNode
     
-    init(fixedPlatform: BounceBlock, blocks: [BounceBlock], obstacles: [Obstacle], entryPipe: PipeBlock, exitPipe: PipeBlock) {
+    init(fixedPlatform: SKShapeNode, blocks: [SKShapeNode], obstacles: [SKShapeNode], entryPipe: SKShapeNode, exitPipe: SKShapeNode) {
         self.fixedPlatform = fixedPlatform 
         self.blocks = blocks
         self.obstacles = obstacles
