@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD7050A920DA9FBB00013E96 /* Level1.sks in Resources */ = {isa = PBXBuildFile; fileRef = AD7050A820DA9FBB00013E96 /* Level1.sks */; };
+		AD7050AE20DAAC4C00013E96 /* Level2.sks in Resources */ = {isa = PBXBuildFile; fileRef = AD7050AD20DAAC4C00013E96 /* Level2.sks */; };
 		AD84150620C19BE60053F21A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84150520C19BE60053F21A /* AppDelegate.swift */; };
 		AD84150C20C19BE60053F21A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84150B20C19BE60053F21A /* GameScene.swift */; };
 		AD84150E20C19BE60053F21A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84150D20C19BE60053F21A /* GameViewController.swift */; };
@@ -20,7 +22,6 @@
 		AD84152920C1A1440053F21A /* ShootingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD84152820C1A1440053F21A /* ShootingState.swift */; };
 		ADA1D29220D0C2CA00EE11BE /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA1D29120D0C2CA00EE11BE /* Level.swift */; };
 		ADA1D29420D0C3B600EE11BE /* Level1.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA1D29320D0C3B600EE11BE /* Level1.swift */; };
-		ADB76B2A20D451CB006CDD84 /* Level1.sks in Resources */ = {isa = PBXBuildFile; fileRef = ADB76B2920D451CB006CDD84 /* Level1.sks */; };
 		ADD6925A20D155D8004327F8 /* Level2.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD6925920D155D8004327F8 /* Level2.swift */; };
 		ADD6925C20D168A8004327F8 /* Level3.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD6925B20D168A8004327F8 /* Level3.swift */; };
 		ADD6926020D17D79004327F8 /* Level4.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD6925F20D17D79004327F8 /* Level4.swift */; };
@@ -28,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD7050A820DA9FBB00013E96 /* Level1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level1.sks; sourceTree = "<group>"; };
+		AD7050AD20DAAC4C00013E96 /* Level2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level2.sks; sourceTree = "<group>"; };
 		AD84150220C19BE60053F21A /* Rollswhere (W GameplayKit).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rollswhere (W GameplayKit).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD84150520C19BE60053F21A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD84150B20C19BE60053F21A /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -43,7 +46,6 @@
 		AD84152820C1A1440053F21A /* ShootingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShootingState.swift; sourceTree = "<group>"; };
 		ADA1D29120D0C2CA00EE11BE /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		ADA1D29320D0C3B600EE11BE /* Level1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level1.swift; sourceTree = "<group>"; };
-		ADB76B2920D451CB006CDD84 /* Level1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level1.sks; sourceTree = "<group>"; };
 		ADD6925920D155D8004327F8 /* Level2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level2.swift; sourceTree = "<group>"; };
 		ADD6925B20D168A8004327F8 /* Level3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level3.swift; sourceTree = "<group>"; };
 		ADD6925F20D17D79004327F8 /* Level4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level4.swift; sourceTree = "<group>"; };
@@ -61,10 +63,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD7050A720DA9F8300013E96 /* SKS Levels */ = {
+			isa = PBXGroup;
+			children = (
+				AD7050A820DA9FBB00013E96 /* Level1.sks */,
+				AD7050AD20DAAC4C00013E96 /* Level2.sks */,
+			);
+			path = "SKS Levels";
+			sourceTree = "<group>";
+		};
 		AD8414F920C19BE60053F21A = {
 			isa = PBXGroup;
 			children = (
-				ADB76B2920D451CB006CDD84 /* Level1.sks */,
 				AD84150420C19BE60053F21A /* Rollswhere (W GameplayKit) */,
 				AD84150320C19BE60053F21A /* Products */,
 			);
@@ -81,6 +91,7 @@
 		AD84150420C19BE60053F21A /* Rollswhere (W GameplayKit) */ = {
 			isa = PBXGroup;
 			children = (
+				AD7050A720DA9F8300013E96 /* SKS Levels */,
 				ADA1D29020D0C2BA00EE11BE /* Levels */,
 				AD84151D20C19D300053F21A /* GameStates */,
 				AD84150520C19BE60053F21A /* AppDelegate.swift */,
@@ -177,10 +188,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADB76B2A20D451CB006CDD84 /* Level1.sks in Resources */,
 				AD84151120C19BE60053F21A /* Main.storyboard in Resources */,
 				AD84151320C19BE70053F21A /* Assets.xcassets in Resources */,
+				AD7050A920DA9FBB00013E96 /* Level1.sks in Resources */,
 				AD84151620C19BE70053F21A /* LaunchScreen.storyboard in Resources */,
+				AD7050AE20DAAC4C00013E96 /* Level2.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
