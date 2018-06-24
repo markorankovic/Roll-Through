@@ -16,7 +16,7 @@ class TransitionState: GameState {
     
     override func didEnter(from previousState: GKState?) {
         print("Entered transition")
-        scene.moveToNextLevel() 
+        game.moveToNextLevel() 
     }
     
 }

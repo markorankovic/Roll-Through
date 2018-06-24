@@ -1,0 +1,450 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AD6A22F820DC76D7000DC107 /* Level2.sks in Resources */ = {isa = PBXBuildFile; fileRef = AD6A22F720DC76D7000DC107 /* Level2.sks */; };
+		AD7050BC20DAB08900013E96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7050BB20DAB08900013E96 /* AppDelegate.swift */; };
+		AD7050C420DAB08900013E96 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7050C320DAB08900013E96 /* GameViewController.swift */; };
+		AD7050C720DAB08900013E96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD7050C520DAB08900013E96 /* Main.storyboard */; };
+		AD7050C920DAB08B00013E96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD7050C820DAB08B00013E96 /* Assets.xcassets */; };
+		AD7050CC20DAB08B00013E96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD7050CA20DAB08B00013E96 /* LaunchScreen.storyboard */; };
+		AD7050D420DAB1D100013E96 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7050D320DAB1D100013E96 /* Ball.swift */; };
+		AD7050D720DAB23E00013E96 /* ShapeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7050D620DAB23E00013E96 /* ShapeComponent.swift */; };
+		AD7050D920DAB26000013E96 /* PlayerControlComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7050D820DAB26000013E96 /* PlayerControlComponent.swift */; };
+		AD7050DB20DAB27A00013E96 /* PhysicsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7050DA20DAB27A00013E96 /* PhysicsComponent.swift */; };
+		AD7050DE20DABA1A00013E96 /* BounceObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7050DD20DABA1A00013E96 /* BounceObject.swift */; };
+		AD7050F620DADDB500013E96 /* PauseState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7050F020DADDB500013E96 /* PauseState.swift */; };
+		AD7050F720DADDB500013E96 /* WaitingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7050F120DADDB500013E96 /* WaitingState.swift */; };
+		AD7050F820DADDB500013E96 /* ReturnState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7050F220DADDB500013E96 /* ReturnState.swift */; };
+		AD7050F920DADDB500013E96 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7050F320DADDB500013E96 /* GameState.swift */; };
+		AD7050FA20DADDB500013E96 /* TransitionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7050F420DADDB500013E96 /* TransitionState.swift */; };
+		AD7050FB20DADDB500013E96 /* ShootingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7050F520DADDB500013E96 /* ShootingState.swift */; };
+		AD7050FD20DADE1C00013E96 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7050FC20DADE1C00013E96 /* Game.swift */; };
+		AD70510020DAED3100013E96 /* Level1.sks in Resources */ = {isa = PBXBuildFile; fileRef = AD7050FF20DAED3100013E96 /* Level1.sks */; };
+		AD70510420DAF77400013E96 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD70510320DAF77400013E96 /* GameScene.swift */; };
+		ADC5B38320DD1FEC00B41DFB /* Level3.sks in Resources */ = {isa = PBXBuildFile; fileRef = ADC5B38220DD1FEC00B41DFB /* Level3.sks */; };
+		ADC5B38520DD281300B41DFB /* Level4.sks in Resources */ = {isa = PBXBuildFile; fileRef = ADC5B38420DD281300B41DFB /* Level4.sks */; };
+		ADC5B38720DDE43D00B41DFB /* Level5.sks in Resources */ = {isa = PBXBuildFile; fileRef = ADC5B38620DDE43D00B41DFB /* Level5.sks */; };
+		ADC5B38920DDE94100B41DFB /* DragComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC5B38820DDE94100B41DFB /* DragComponent.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AD6A22F720DC76D7000DC107 /* Level2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level2.sks; sourceTree = "<group>"; };
+		AD7050B820DAB08900013E96 /* Rollswhere (ReturnTo-GKEntities).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rollswhere (ReturnTo-GKEntities).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD7050BB20DAB08900013E96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AD7050C320DAB08900013E96 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		AD7050C620DAB08900013E96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AD7050C820DAB08B00013E96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AD7050CB20DAB08B00013E96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AD7050CD20DAB08B00013E96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD7050D320DAB1D100013E96 /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
+		AD7050D620DAB23E00013E96 /* ShapeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeComponent.swift; sourceTree = "<group>"; };
+		AD7050D820DAB26000013E96 /* PlayerControlComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerControlComponent.swift; sourceTree = "<group>"; };
+		AD7050DA20DAB27A00013E96 /* PhysicsComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsComponent.swift; sourceTree = "<group>"; };
+		AD7050DD20DABA1A00013E96 /* BounceObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BounceObject.swift; sourceTree = "<group>"; };
+		AD7050F020DADDB500013E96 /* PauseState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PauseState.swift; sourceTree = "<group>"; };
+		AD7050F120DADDB500013E96 /* WaitingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitingState.swift; sourceTree = "<group>"; };
+		AD7050F220DADDB500013E96 /* ReturnState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReturnState.swift; sourceTree = "<group>"; };
+		AD7050F320DADDB500013E96 /* GameState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		AD7050F420DADDB500013E96 /* TransitionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionState.swift; sourceTree = "<group>"; };
+		AD7050F520DADDB500013E96 /* ShootingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShootingState.swift; sourceTree = "<group>"; };
+		AD7050FC20DADE1C00013E96 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		AD7050FF20DAED3100013E96 /* Level1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level1.sks; sourceTree = "<group>"; };
+		AD70510320DAF77400013E96 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = "../../Rollswhere (W GameplayKit)/Rollswhere (W GameplayKit)/GameScene.swift"; sourceTree = "<group>"; };
+		ADC5B38220DD1FEC00B41DFB /* Level3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level3.sks; sourceTree = "<group>"; };
+		ADC5B38420DD281300B41DFB /* Level4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level4.sks; sourceTree = "<group>"; };
+		ADC5B38620DDE43D00B41DFB /* Level5.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level5.sks; sourceTree = "<group>"; };
+		ADC5B38820DDE94100B41DFB /* DragComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragComponent.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AD7050B520DAB08900013E96 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AD7050AF20DAB08900013E96 = {
+			isa = PBXGroup;
+			children = (
+				AD7050BA20DAB08900013E96 /* Rollswhere (ReturnTo-GKEntities) */,
+				AD7050B920DAB08900013E96 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AD7050B920DAB08900013E96 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AD7050B820DAB08900013E96 /* Rollswhere (ReturnTo-GKEntities).app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AD7050BA20DAB08900013E96 /* Rollswhere (ReturnTo-GKEntities) */ = {
+			isa = PBXGroup;
+			children = (
+				AD7050CD20DAB08B00013E96 /* Info.plist */,
+				AD7050BB20DAB08900013E96 /* AppDelegate.swift */,
+				AD7050FC20DADE1C00013E96 /* Game.swift */,
+				AD70510320DAF77400013E96 /* GameScene.swift */,
+				AD7050C320DAB08900013E96 /* GameViewController.swift */,
+				AD7050C820DAB08B00013E96 /* Assets.xcassets */,
+				AD7050D520DAB23200013E96 /* Components */,
+				AD7050DC20DAB79000013E96 /* Entities */,
+				AD7050EF20DADDB500013E96 /* GameStates */,
+				AD7050CA20DAB08B00013E96 /* LaunchScreen.storyboard */,
+				AD7050FE20DAECD000013E96 /* Levels */,
+				AD7050C520DAB08900013E96 /* Main.storyboard */,
+			);
+			path = "Rollswhere (ReturnTo-GKEntities)";
+			sourceTree = "<group>";
+		};
+		AD7050D520DAB23200013E96 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AD7050D620DAB23E00013E96 /* ShapeComponent.swift */,
+				AD7050D820DAB26000013E96 /* PlayerControlComponent.swift */,
+				AD7050DA20DAB27A00013E96 /* PhysicsComponent.swift */,
+				ADC5B38820DDE94100B41DFB /* DragComponent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		AD7050DC20DAB79000013E96 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				AD7050DD20DABA1A00013E96 /* BounceObject.swift */,
+				AD7050D320DAB1D100013E96 /* Ball.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		AD7050EF20DADDB500013E96 /* GameStates */ = {
+			isa = PBXGroup;
+			children = (
+				AD7050F020DADDB500013E96 /* PauseState.swift */,
+				AD7050F120DADDB500013E96 /* WaitingState.swift */,
+				AD7050F220DADDB500013E96 /* ReturnState.swift */,
+				AD7050F320DADDB500013E96 /* GameState.swift */,
+				AD7050F420DADDB500013E96 /* TransitionState.swift */,
+				AD7050F520DADDB500013E96 /* ShootingState.swift */,
+			);
+			name = GameStates;
+			path = "../../Rollswhere (W GameplayKit)/Rollswhere (W GameplayKit)/GameStates";
+			sourceTree = "<group>";
+		};
+		AD7050FE20DAECD000013E96 /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				AD7050FF20DAED3100013E96 /* Level1.sks */,
+				AD6A22F720DC76D7000DC107 /* Level2.sks */,
+				ADC5B38220DD1FEC00B41DFB /* Level3.sks */,
+				ADC5B38420DD281300B41DFB /* Level4.sks */,
+				ADC5B38620DDE43D00B41DFB /* Level5.sks */,
+			);
+			path = Levels;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AD7050B720DAB08900013E96 /* Rollswhere (ReturnTo-GKEntities) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD7050D020DAB08B00013E96 /* Build configuration list for PBXNativeTarget "Rollswhere (ReturnTo-GKEntities)" */;
+			buildPhases = (
+				AD7050B420DAB08900013E96 /* Sources */,
+				AD7050B520DAB08900013E96 /* Frameworks */,
+				AD7050B620DAB08900013E96 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Rollswhere (ReturnTo-GKEntities)";
+			productName = "Rollswhere (ReturnTo-GKEntities)";
+			productReference = AD7050B820DAB08900013E96 /* Rollswhere (ReturnTo-GKEntities).app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AD7050B020DAB08900013E96 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = Marko;
+				TargetAttributes = {
+					AD7050B720DAB08900013E96 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = AD7050B320DAB08900013E96 /* Build configuration list for PBXProject "Rollswhere (ReturnTo-GKEntities)" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AD7050AF20DAB08900013E96;
+			productRefGroup = AD7050B920DAB08900013E96 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AD7050B720DAB08900013E96 /* Rollswhere (ReturnTo-GKEntities) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AD7050B620DAB08900013E96 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADC5B38320DD1FEC00B41DFB /* Level3.sks in Resources */,
+				AD7050C720DAB08900013E96 /* Main.storyboard in Resources */,
+				AD7050C920DAB08B00013E96 /* Assets.xcassets in Resources */,
+				ADC5B38520DD281300B41DFB /* Level4.sks in Resources */,
+				AD70510020DAED3100013E96 /* Level1.sks in Resources */,
+				AD7050CC20DAB08B00013E96 /* LaunchScreen.storyboard in Resources */,
+				ADC5B38720DDE43D00B41DFB /* Level5.sks in Resources */,
+				AD6A22F820DC76D7000DC107 /* Level2.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AD7050B420DAB08900013E96 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD70510420DAF77400013E96 /* GameScene.swift in Sources */,
+				AD7050D420DAB1D100013E96 /* Ball.swift in Sources */,
+				AD7050FD20DADE1C00013E96 /* Game.swift in Sources */,
+				AD7050F720DADDB500013E96 /* WaitingState.swift in Sources */,
+				AD7050DB20DAB27A00013E96 /* PhysicsComponent.swift in Sources */,
+				AD7050DE20DABA1A00013E96 /* BounceObject.swift in Sources */,
+				AD7050FA20DADDB500013E96 /* TransitionState.swift in Sources */,
+				AD7050D920DAB26000013E96 /* PlayerControlComponent.swift in Sources */,
+				AD7050C420DAB08900013E96 /* GameViewController.swift in Sources */,
+				AD7050F820DADDB500013E96 /* ReturnState.swift in Sources */,
+				AD7050BC20DAB08900013E96 /* AppDelegate.swift in Sources */,
+				AD7050F920DADDB500013E96 /* GameState.swift in Sources */,
+				AD7050D720DAB23E00013E96 /* ShapeComponent.swift in Sources */,
+				AD7050FB20DADDB500013E96 /* ShootingState.swift in Sources */,
+				AD7050F620DADDB500013E96 /* PauseState.swift in Sources */,
+				ADC5B38920DDE94100B41DFB /* DragComponent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AD7050C520DAB08900013E96 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD7050C620DAB08900013E96 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AD7050CA20DAB08B00013E96 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AD7050CB20DAB08B00013E96 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AD7050CE20DAB08B00013E96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AD7050CF20DAB08B00013E96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AD7050D120DAB08B00013E96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 83XX9TWPTZ;
+				INFOPLIST_FILE = "Rollswhere (ReturnTo-GKEntities)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.markosapps.Rollswhere--ReturnTo-GKEntities-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AD7050D220DAB08B00013E96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 83XX9TWPTZ;
+				INFOPLIST_FILE = "Rollswhere (ReturnTo-GKEntities)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.markosapps.Rollswhere--ReturnTo-GKEntities-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AD7050B320DAB08900013E96 /* Build configuration list for PBXProject "Rollswhere (ReturnTo-GKEntities)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD7050CE20DAB08B00013E96 /* Debug */,
+				AD7050CF20DAB08B00013E96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD7050D020DAB08B00013E96 /* Build configuration list for PBXNativeTarget "Rollswhere (ReturnTo-GKEntities)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD7050D120DAB08B00013E96 /* Debug */,
+				AD7050D220DAB08B00013E96 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AD7050B020DAB08900013E96 /* Project object */;
+}

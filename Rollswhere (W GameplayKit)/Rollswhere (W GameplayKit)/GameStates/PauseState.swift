@@ -18,10 +18,12 @@ class PauseState: GameState {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if scene.nodes(at: touches.first!.location(in: scene)).first?.name == "togglePauseButton" {
-            if let state = previousState {
-                stateMachine?.enter(type(of: state))
-            }
+        if let scene = game.scene {
+            if scene.nodes(at: touches.first!.location(in: scene)).first?.name == "togglePauseButton" {
+                if let state = previousState {
+                    stateMachine?.enter(type(of: state))
+                }
+            }  
         }
     }
     

@@ -9,11 +9,9 @@
 import GameplayKit
 
 class GameState: GKState {
-    
-    weak var scene: GameScene!
         
-    init(scene: GameScene) {
-        self.scene = scene
+    var ball: Ball? {
+        return game.entities.first(where: { $0 is Ball }) as? Ball
     }
     
     func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) { }
@@ -23,4 +21,6 @@ class GameState: GKState {
     func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) { }
     
 }
+
+
  
