@@ -14,8 +14,8 @@ class PlayerControlComponent: GKComponent {
         return entity?.component(ofType: PhysicsComponent.self)
     }
     
-    var shapeComponent: ShapeComponent? {
-        return entity?.component(ofType: ShapeComponent.self)
+    var geometryComponent: GeometryComponent? {
+        return entity?.component(ofType: GeometryComponent.self)
     }
     
     var applyingPowerToBall = false
@@ -27,7 +27,7 @@ class PlayerControlComponent: GKComponent {
     func shoot() {
         if let physicsComponent = physicsComponent {
             physicsComponent.physicsBody?.velocity.dx = power 
-        }
+        }  
     }
     
     func increaseBallPower() {
@@ -47,23 +47,23 @@ class PlayerControlComponent: GKComponent {
     }
     
     func resetPowerBar() {
-        if let shapeNode = shapeComponent?.shapeNode {
-            if let boundingBox = shapeNode.path?.boundingBox {
-                let radius = (boundingBox.size.width * shapeNode.xScale) / 2
+        if let shapeNode = geometryComponent?.spriteNode {
+            if let frame = geometryComponent?.spriteNode?.frame {
+                let radius = frame.size.width / 2
                 powerBar.position.x = shapeNode.position.x  
                 powerBar.position.y = shapeNode.position.y + radius + 20
                 powerBar.strokeColor = .red
                 powerBar.lineWidth = 0
                 powerBar.zPosition = 10
             }
-        }
+        }   
     }
     
     func returnToStart() {
         power = 0
         physicsComponent?.stopMovement() 
-        if let entryPipe = shapeComponent?.shapeNode?.scene?.childNode(withName: "entryPipe") {
-            shapeComponent?.shapeNode?.position = entryPipe.position
+        if let entryPipe = geometryComponent?.spriteNode?.scene?.childNode(withName: "entryPipe") {
+            geometryComponent?.spriteNode?.position = entryPipe.position
         }
     }
     

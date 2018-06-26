@@ -10,8 +10,8 @@ import GameplayKit
 
 class PhysicsComponent: GKComponent {
     
-    var shapeComponent: ShapeComponent? {
-        return entity?.component(ofType: ShapeComponent.self)
+    var geometryComponent: GeometryComponent? {
+        return entity?.component(ofType: GeometryComponent.self)   
     }
     
     var physicsBody: SKPhysicsBody?
@@ -25,9 +25,9 @@ class PhysicsComponent: GKComponent {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func updateShapeComponent() {
-        if let shapeComponent = shapeComponent {
-            shapeComponent.shapeNode?.physicsBody = physicsBody  
+    func updateGeometryComponent() {
+        if let geometryComponent = geometryComponent {
+            geometryComponent.spriteNode?.physicsBody = physicsBody
         }
     }
     
@@ -37,7 +37,7 @@ class PhysicsComponent: GKComponent {
     }
     
     override func update(deltaTime seconds: TimeInterval) {
-        updateShapeComponent()
+        updateGeometryComponent()
     }
     
 }

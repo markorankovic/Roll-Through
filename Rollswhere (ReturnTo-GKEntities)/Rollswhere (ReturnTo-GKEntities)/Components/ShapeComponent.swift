@@ -1,5 +1,5 @@
 //
-//  ShapeComponent.swift
+//  GeometryComponent.swift
 //  Rollswhere (ReturnTo-GKEntities)
 //
 //  Created by Marko on 20/06/2018.
@@ -8,13 +8,13 @@
 
 import GameplayKit
 
-class ShapeComponent: GKComponent {
+class GeometryComponent: GKComponent {
     
-    var shapeNode: SKShapeNode?
+    var spriteNode: SKSpriteNode?
     
-    init(shapeNode: SKShapeNode) {
+    init(spriteNode: SKSpriteNode) {
         super.init()
-        self.shapeNode = shapeNode  
+        self.spriteNode = spriteNode  
     }
     
     required init?(coder aDecoder: NSCoder) {

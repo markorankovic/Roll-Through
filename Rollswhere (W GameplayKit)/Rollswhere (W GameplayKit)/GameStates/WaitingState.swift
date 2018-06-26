@@ -31,7 +31,7 @@ class WaitingState: GameState {
                 touchedNodes.insert(node)
             }
         }
-        let draggingBlocks = game.entities.filter({ $0 is BounceObject && $0.component(ofType: DragComponent.self) != nil && touchedNodes.contains(($0.component(ofType: ShapeComponent.self)?.shapeNode)!) })
+        let draggingBlocks = game.entities.filter({ $0 is BounceObject && $0.component(ofType: DragComponent.self) != nil && touchedNodes.contains(($0.component(ofType: GeometryComponent.self)?.spriteNode)!) })   
         return draggingBlocks
     }
     

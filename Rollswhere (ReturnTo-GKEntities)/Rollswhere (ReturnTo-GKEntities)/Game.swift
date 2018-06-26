@@ -11,7 +11,7 @@ import GameplayKit
 class Game {
     
     var entities: [GKEntity] = []
-    var level = 4  
+    var level = 0
     var scene: GameScene?
     var physicsComponentSystem = GKComponentSystem(componentClass: PhysicsComponent.self)
     var stateMachine: GKStateMachine  
@@ -19,10 +19,10 @@ class Game {
     func ballInsideNode(nodeName: String) -> Bool {
         let ballNode = scene?.childNode(withName: "ball")
         let pipeNode = scene?.childNode(withName: nodeName)
-        if let ballNode = ballNode as? SKShapeNode {
-            if let pipeNode = pipeNode as? SKShapeNode {
+        if let ballNode = ballNode as? SKSpriteNode {
+            if let pipeNode = pipeNode as? SKSpriteNode {
                 let transformedPos = CGPoint(x: ballNode.position.x - pipeNode.position.x, y: ballNode.position.y - pipeNode.position.y).applying(CGAffineTransform(rotationAngle: -pipeNode.zRotation))
-                let ballRadius = ((ballNode.path?.boundingBox.size.width)! * ballNode.xScale) / 2
+                let ballRadius = ballNode.frame.size.width / 2   
                 let ballTransformedPos = CGPoint(x: transformedPos.x + pipeNode.position.x - ballRadius, y: transformedPos.y + pipeNode.position.y - ballRadius)
                 let ballRect = CGRect(origin: ballTransformedPos, size: CGSize(width: ballRadius * 2, height: ballRadius * 2))
                 let pipeRect = pipeNode.frame
@@ -57,25 +57,16 @@ class Game {
     }
     
     func addBallEntity() {
-        if let ballNode = scene?.childNode(withName: "ball") as? SKShapeNode {
-            let node = SKShapeNode(ellipseOf: ballNode.frame.size) 
-            node.position = ballNode.position
-            node.fillColor = ballNode.fillColor
-            node.strokeColor = ballNode.strokeColor
-            node.lineWidth = 0.5
-            node.zPosition = ballNode.zPosition
-            node.name = ballNode.name
-            ballNode.removeFromParent()
-            scene?.addChild(node)
-            entities.append(Ball(shapeNode: node))
+        if let ballNode = scene?.childNode(withName: "ball") as? SKSpriteNode {
+            entities.append(Ball(spriteNode: ballNode))
         }
     }
     
     func addPipeEntities() {
-        var pipes: [SKShapeNode] = []
+        var pipes: [SKSpriteNode] = []
         if let children = scene?.children {
             for child in children {
-                if let shapeNode = child as? SKShapeNode {
+                if let shapeNode = child as? SKSpriteNode {
                     if let name = shapeNode.name {
                         if name.contains("Pipe") {
                             pipes.append(shapeNode)
@@ -85,56 +76,27 @@ class Game {
             }
         } 
         for pipe in pipes {
-            let node = SKShapeNode(rectOf: CGSize(width: (pipe.path?.boundingBox.width)! * pipe.xScale, height: (pipe.path?.boundingBox.height)! * pipe.yScale))
-            node.position = pipe.position
-            node.fillColor = pipe.fillColor
-            node.strokeColor = pipe.strokeColor
-            node.lineWidth = 0.5
-            node.zPosition = pipe.zPosition
-            node.name = pipe.name
-            pipe.removeFromParent()
-            scene?.addChild(node)
-            let body1 = SKPhysicsBody(edgeFrom: .init(x: -node.frame.size.width / 2, y: -node.frame.size.height / 2), to: .init(x: -node.frame.size.width / 2, y: node.frame.size.height / 2))
-            let body2 = SKPhysicsBody(edgeFrom: .init(x: node.frame.size.width / 2, y: -node.frame.size.height / 2), to: .init(x: node.frame.size.width / 2, y: node.frame.size.height / 2))
-            node.zRotation = pipe.zRotation  
+            let body1 = SKPhysicsBody(edgeFrom: .init(x: -pipe.frame.size.width / 2, y: -pipe.frame.size.height / 2), to: .init(x: -pipe.frame.size.width / 2, y: pipe.frame.size.height / 2))
+            let body2 = SKPhysicsBody(edgeFrom: .init(x: pipe.frame.size.width / 2, y: -pipe.frame.size.height / 2), to: .init(x: pipe.frame.size.width / 2, y: pipe.frame.size.height / 2))
             let body = SKPhysicsBody(bodies: [body1, body2])
+            pipe.physicsBody = body  
             body.pinned = true
-            entities.append(BounceObject(shapeNode: node, physicsBody: body))
+            entities.append(BounceObject(spriteNode: pipe))
         }
     }
     
     func addFixedEntities() {
-        if let fixedNodes = scene?.children.filter({ $0.name == "fixed" }) as? [SKShapeNode] {
+        if let fixedNodes = scene?.children.filter({ $0.name == "fixed" }) as? [SKSpriteNode] {
             for fixedNode in fixedNodes {   
-                let node = SKShapeNode(rectOf: CGSize(width: (fixedNode.path?.boundingBox.width)! * fixedNode.xScale, height: (fixedNode.path?.boundingBox.height)! * fixedNode.yScale))
-                node.position = fixedNode.position  
-                node.fillColor = fixedNode.fillColor  
-                node.strokeColor = fixedNode.strokeColor
-                node.lineWidth = 0.5
-                node.zPosition = fixedNode.zPosition
-                node.name = fixedNode.name
-                node.zRotation = fixedNode.zRotation  
-                fixedNode.removeFromParent()
-                scene?.addChild(node)
-                entities.append(BounceObject(shapeNode: node, physicsBody: SKPhysicsBody(edgeLoopFrom: CGRect(origin: CGPoint(x: -node.path!.boundingBox.size.width/2, y: -node.path!.boundingBox.size.height/2), size: node.path!.boundingBox.size))))
-            }   
+                entities.append(BounceObject(spriteNode: fixedNode))
+            }
         }
     }
     
     func addDraggableEntities() {
-        if let blockNodes = scene?.children.filter({ $0.name == "block" }) as? [SKShapeNode] {
+        if let blockNodes = scene?.children.filter({ $0.name == "block" }) as? [SKSpriteNode] {
             for blockNode in blockNodes {
-                let node = SKShapeNode(rectOf: CGSize(width: (blockNode.path?.boundingBox.width)! * blockNode.xScale, height: (blockNode.path?.boundingBox.height)! * blockNode.yScale))
-                node.position = blockNode.position
-                node.fillColor = blockNode.fillColor
-                node.strokeColor = blockNode.strokeColor
-                node.lineWidth = 0.5
-                node.zPosition = blockNode.zPosition
-                node.name = blockNode.name
-                node.zRotation = blockNode.zRotation   
-                blockNode.removeFromParent()
-                scene?.addChild(node)
-                let block = BounceObject(shapeNode: node, physicsBody: SKPhysicsBody(edgeLoopFrom: CGRect(origin: CGPoint(x: -node.path!.boundingBox.size.width/2, y: -node.path!.boundingBox.size.height/2), size: node.path!.boundingBox.size)))
+                let block = BounceObject(spriteNode: blockNode)
                 block.addComponent(DragComponent())
                 entities.append(block)   
             }
@@ -159,8 +121,8 @@ class Game {
     
     func moveToNextLevel() {
         entities.removeAll()
-        level += level > 4 ? -4 : 1
-        let s = GameScene(fileNamed: "Level\(level).sks")    
+        level += level == 1 ? 0 : 1
+        let s = GameScene(fileNamed: "Level\(level).sks")   
         scene?.view?.presentScene(s)
         scene = s 
         setUpGameEntities()

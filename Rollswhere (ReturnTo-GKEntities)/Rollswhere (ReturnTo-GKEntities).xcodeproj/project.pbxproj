@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AD6A22F820DC76D7000DC107 /* Level2.sks in Resources */ = {isa = PBXBuildFile; fileRef = AD6A22F720DC76D7000DC107 /* Level2.sks */; };
+		AD33440820E06FF60013293B /* Level1.sks in Resources */ = {isa = PBXBuildFile; fileRef = AD33440720E06FF60013293B /* Level1.sks */; };
 		AD7050BC20DAB08900013E96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7050BB20DAB08900013E96 /* AppDelegate.swift */; };
 		AD7050C420DAB08900013E96 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7050C320DAB08900013E96 /* GameViewController.swift */; };
 		AD7050C720DAB08900013E96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD7050C520DAB08900013E96 /* Main.storyboard */; };
@@ -25,16 +25,12 @@
 		AD7050FA20DADDB500013E96 /* TransitionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7050F420DADDB500013E96 /* TransitionState.swift */; };
 		AD7050FB20DADDB500013E96 /* ShootingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7050F520DADDB500013E96 /* ShootingState.swift */; };
 		AD7050FD20DADE1C00013E96 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7050FC20DADE1C00013E96 /* Game.swift */; };
-		AD70510020DAED3100013E96 /* Level1.sks in Resources */ = {isa = PBXBuildFile; fileRef = AD7050FF20DAED3100013E96 /* Level1.sks */; };
 		AD70510420DAF77400013E96 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD70510320DAF77400013E96 /* GameScene.swift */; };
-		ADC5B38320DD1FEC00B41DFB /* Level3.sks in Resources */ = {isa = PBXBuildFile; fileRef = ADC5B38220DD1FEC00B41DFB /* Level3.sks */; };
-		ADC5B38520DD281300B41DFB /* Level4.sks in Resources */ = {isa = PBXBuildFile; fileRef = ADC5B38420DD281300B41DFB /* Level4.sks */; };
-		ADC5B38720DDE43D00B41DFB /* Level5.sks in Resources */ = {isa = PBXBuildFile; fileRef = ADC5B38620DDE43D00B41DFB /* Level5.sks */; };
 		ADC5B38920DDE94100B41DFB /* DragComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC5B38820DDE94100B41DFB /* DragComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AD6A22F720DC76D7000DC107 /* Level2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level2.sks; sourceTree = "<group>"; };
+		AD33440720E06FF60013293B /* Level1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level1.sks; sourceTree = "<group>"; };
 		AD7050B820DAB08900013E96 /* Rollswhere (ReturnTo-GKEntities).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rollswhere (ReturnTo-GKEntities).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD7050BB20DAB08900013E96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD7050C320DAB08900013E96 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -54,11 +50,7 @@
 		AD7050F420DADDB500013E96 /* TransitionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionState.swift; sourceTree = "<group>"; };
 		AD7050F520DADDB500013E96 /* ShootingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShootingState.swift; sourceTree = "<group>"; };
 		AD7050FC20DADE1C00013E96 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		AD7050FF20DAED3100013E96 /* Level1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level1.sks; sourceTree = "<group>"; };
 		AD70510320DAF77400013E96 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = "../../Rollswhere (W GameplayKit)/Rollswhere (W GameplayKit)/GameScene.swift"; sourceTree = "<group>"; };
-		ADC5B38220DD1FEC00B41DFB /* Level3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level3.sks; sourceTree = "<group>"; };
-		ADC5B38420DD281300B41DFB /* Level4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level4.sks; sourceTree = "<group>"; };
-		ADC5B38620DDE43D00B41DFB /* Level5.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level5.sks; sourceTree = "<group>"; };
 		ADC5B38820DDE94100B41DFB /* DragComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,11 +137,7 @@
 		AD7050FE20DAECD000013E96 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
-				AD7050FF20DAED3100013E96 /* Level1.sks */,
-				AD6A22F720DC76D7000DC107 /* Level2.sks */,
-				ADC5B38220DD1FEC00B41DFB /* Level3.sks */,
-				ADC5B38420DD281300B41DFB /* Level4.sks */,
-				ADC5B38620DDE43D00B41DFB /* Level5.sks */,
+				AD33440720E06FF60013293B /* Level1.sks */,
 			);
 			path = Levels;
 			sourceTree = "<group>";
@@ -212,14 +200,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADC5B38320DD1FEC00B41DFB /* Level3.sks in Resources */,
 				AD7050C720DAB08900013E96 /* Main.storyboard in Resources */,
 				AD7050C920DAB08B00013E96 /* Assets.xcassets in Resources */,
-				ADC5B38520DD281300B41DFB /* Level4.sks in Resources */,
-				AD70510020DAED3100013E96 /* Level1.sks in Resources */,
+				AD33440820E06FF60013293B /* Level1.sks in Resources */,
 				AD7050CC20DAB08B00013E96 /* LaunchScreen.storyboard in Resources */,
-				ADC5B38720DDE43D00B41DFB /* Level5.sks in Resources */,
-				AD6A22F820DC76D7000DC107 /* Level2.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

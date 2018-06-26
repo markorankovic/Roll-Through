@@ -14,10 +14,10 @@ class BounceObject: GKEntity {
         super.init()
     }
     
-    convenience init(shapeNode: SKShapeNode, physicsBody: SKPhysicsBody) {
+    convenience init(spriteNode: SKSpriteNode) {
         self.init()
-        addComponent(ShapeComponent(shapeNode: shapeNode))
-        addComponent(PhysicsComponent(physicsBody: physicsBody))
+        addComponent(GeometryComponent(spriteNode: spriteNode))   
+        addComponent(PhysicsComponent(physicsBody: spriteNode.physicsBody!))
     }
     
     required init?(coder aDecoder: NSCoder) {

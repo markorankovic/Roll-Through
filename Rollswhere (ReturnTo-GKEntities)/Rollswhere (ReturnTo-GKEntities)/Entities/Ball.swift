@@ -14,13 +14,12 @@ class Ball: GKEntity {
         super.init()
     }
     
-    convenience init(shapeNode: SKShapeNode) {
+    convenience init(spriteNode: SKSpriteNode) {
         self.init()
-        addComponent(ShapeComponent(shapeNode: shapeNode))
+        addComponent(GeometryComponent(spriteNode: spriteNode))
         addComponent(PlayerControlComponent())
-        let physicsBody = SKPhysicsBody(circleOfRadius: (shapeNode.path?.boundingBox.size.width)! / 2)
-        physicsBody.collisionBitMask = 1  
-        addComponent(PhysicsComponent(physicsBody: physicsBody))
+        spriteNode.physicsBody?.collisionBitMask = 1
+        addComponent(PhysicsComponent(physicsBody: spriteNode.physicsBody!))  
     }  
     
     required init?(coder aDecoder: NSCoder) {

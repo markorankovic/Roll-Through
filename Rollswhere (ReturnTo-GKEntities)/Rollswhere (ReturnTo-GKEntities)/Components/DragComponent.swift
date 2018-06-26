@@ -10,16 +10,16 @@ import GameplayKit
 
 class DragComponent: GKComponent {
     
-    var shapeComponent: ShapeComponent? {
-        return entity?.component(ofType: ShapeComponent.self)
+    var geometryComponent: GeometryComponent? {
+        return entity?.component(ofType: GeometryComponent.self)
     }
     
     func evaluateDrag(touch: UITouch) {
         let touchLocation = touch.location(in: game.scene!)
         let prevTouchLocation = touch.previousLocation(in: game.scene!)
-        if let block = shapeComponent?.shapeNode {
+        if let block = geometryComponent?.spriteNode {
             block.run(.moveBy(x: touchLocation.x - prevTouchLocation.x, y: touchLocation.y - prevTouchLocation.y, duration: 0))
-        }
+        }  
     }
     
     func evaluateRotation(touch1: UITouch, touch2: UITouch) {
@@ -30,7 +30,7 @@ class DragComponent: GKComponent {
         let iTheta = atan((t1PrevLoc.y - t2PrevLoc.y) / (t1PrevLoc.x - t2PrevLoc.x))
         let fTheta = atan((t1Loc.y - t2Loc.y) / (t1Loc.x - t2Loc.x))
         let dTheta = fTheta - iTheta
-        if let block = shapeComponent?.shapeNode {
+        if let block = geometryComponent?.spriteNode {
             block.run(.rotate(byAngle: dTheta, duration: 0))
         }
     }
