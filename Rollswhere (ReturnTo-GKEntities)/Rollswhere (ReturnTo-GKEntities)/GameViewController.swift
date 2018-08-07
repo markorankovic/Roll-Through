@@ -16,9 +16,11 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         if let view = self.view as? SKView {
-            view.presentScene(game.scene)  
+            view.presentScene(game.scene)    
             view.ignoresSiblingOrder = true
-            
+            view.preferredFramesPerSecond = 60
+            //view.showsPhysics = true 
+            view.showsFields = true 
             view.showsFPS = true
             view.showsNodeCount = true
         }
@@ -29,11 +31,7 @@ class GameViewController: UIViewController {
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
-        } else {
-            return .all
-        }
+        return .landscapeLeft  
     }
 
     override func didReceiveMemoryWarning() {

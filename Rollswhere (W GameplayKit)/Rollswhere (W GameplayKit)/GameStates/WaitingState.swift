@@ -31,7 +31,7 @@ class WaitingState: GameState {
                 touchedNodes.insert(node)
             }
         }
-        let draggingBlocks = game.entities.filter({ $0 is BounceObject && $0.component(ofType: DragComponent.self) != nil && touchedNodes.contains(($0.component(ofType: GeometryComponent.self)?.spriteNode)!) })   
+        let draggingBlocks = game.entities.filter({ $0 is BounceObject && $0.component(ofType: DragComponent.self) != nil && touchedNodes.contains(($0.component(ofType: GeometryComponent.self)?.node)!) })   
         return draggingBlocks
     }
     
@@ -39,26 +39,47 @@ class WaitingState: GameState {
         ball?.component(ofType: PlayerControlComponent.self)?.touchesBegan(touches, with: event)
         draggingBlocks = getDraggingBlocks(touches: touches)
     }
-
+ 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        ball?.component(ofType: PlayerControlComponent.self)?.touchesMoved(touches, with: event)
         for block in draggingBlocks {
             block.component(ofType: DragComponent.self)?.touchesMoved(touches, with: event)
-        }    
+        }
+        evaluateCameraMovement(touches)
+    }
+    
+    func evaluateCameraMovement(_ touches: Set<UITouch>) {
+        guard let scene = game.scene else {
+            return
+        } 
+        guard touches.count == 2 else {
+            return
+        }
+        game.scene?.camera?.run(.moveBy(x: touches.first!.location(in: scene).x - touches.first!.previousLocation(in: scene).x, y: touches.reversed().first!.location(in: scene).y - touches.reversed().first!.previousLocation(in: scene).y, duration: 0.1))
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         ball?.component(ofType: PlayerControlComponent.self)?.touchesEnded(touches, with: event)
         draggingBlocks = getDraggingBlocks(touches: touches)
+        for block in draggingBlocks {
+            block.component(ofType: DragComponent.self)?.touchesEnded(touches, with: event)
+        }  
     }
 
     override func didEnter(from previousState: GKState?) {
         ball?.component(ofType: PlayerControlComponent.self)?.resetPowerBar()  
         ball?.component(ofType: PlayerControlComponent.self)?.addPowerBar()
-        print("Entered waiting")  
+        //testShoot()
+        print("Entered waiting") 
+    }
+    
+    func testShoot() {
+        ball?.component(ofType: PlayerControlComponent.self)?.power = 500
+        stateMachine?.enter(ShootingState.self) 
     }
 
     override func update(deltaTime seconds: TimeInterval) {
-        ball?.component(ofType: PlayerControlComponent.self)?.update(deltaTime: seconds)  
+        ball?.component(ofType: PlayerControlComponent.self)?.update(deltaTime: seconds) 
     }
 
 }

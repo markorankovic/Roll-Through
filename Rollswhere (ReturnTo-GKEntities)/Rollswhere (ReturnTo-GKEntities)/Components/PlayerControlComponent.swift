@@ -18,9 +18,13 @@ class PlayerControlComponent: GKComponent {
         return entity?.component(ofType: GeometryComponent.self)
     }
     
+    let maxPower: CGFloat = 10000
+    
+    let powerIncrease: CGFloat = 100
+    
     var applyingPowerToBall = false
     
-    let powerBar = SKShapeNode(rectOf: .init(width: 0, height: 10))
+    let powerBar = SKNode()
     
     var power: CGFloat = 0
     
@@ -30,13 +34,36 @@ class PlayerControlComponent: GKComponent {
         }  
     }
     
-    func increaseBallPower() {
-        power += 50
-    }  
+    func evaluateBallPower(touchLoc: CGPoint) {
+        let touchDistanceToBall = touchLoc.hypot2(point: geometryComponent!.node!.position)
+        let maxDistance: CGFloat = 300
+        power = powerIncrease * touchDistanceToBall / ((maxDistance * powerIncrease) / maxPower)
+        if power > maxPower {
+            power = maxPower
+        }
+        print("power: \(power)")
+        evaluatePowerBarLength()
+    }
     
-    func increasePowerBarWidth() {
-        powerBar.lineWidth += 1
-    }  
+    func evaluatePowerBarLength() {
+        let ballNode = geometryComponent!.node!
+        let radius = ballNode.frame.width / 2
+        let angleFrom = CGFloat.pi / 2
+        let angleTo = angleFrom - (power * (2 * CGFloat.pi)) / maxPower
+        powerBar.removeAllChildren()
+        createTrail(radius, angleFrom, angleTo)
+    }
+    
+    func createTrail(_ radius: CGFloat, _ angleFrom: CGFloat, _ angleTo: CGFloat) {
+        for angle in stride(from: angleFrom, to: angleTo, by: (angleTo - angleFrom) / (2 * radius)) {
+            let ball = SKShapeNode(ellipseOf: .init(width: 1, height: 1))
+            ball.strokeColor = .red
+            ball.fillColor = .red
+            ball.glowWidth = 5
+            ball.position = .init(x: radius * cos(angle), y: radius * sin(angle)) 
+            powerBar.addChild(ball)
+        }
+    }
     
     func addPowerBar() {
         game.scene?.addChild(powerBar)
@@ -47,44 +74,45 @@ class PlayerControlComponent: GKComponent {
     }
     
     func resetPowerBar() {
-        if let shapeNode = geometryComponent?.spriteNode {
-            if let frame = geometryComponent?.spriteNode?.frame {
-                let radius = frame.size.width / 2
-                powerBar.position.x = shapeNode.position.x  
-                powerBar.position.y = shapeNode.position.y + radius + 20
-                powerBar.strokeColor = .red
-                powerBar.lineWidth = 0
-                powerBar.zPosition = 10
-            }
-        }   
+        if let shapeNode = geometryComponent?.node {
+            powerBar.position.x = shapeNode.position.x
+            powerBar.position.y = shapeNode.position.y 
+            powerBar.removeAllChildren()
+            powerBar.zPosition = 10
+        }
+    }
+    
+    func setPlayerVelocity(to: CGVector) {
+        physicsComponent?.physicsBody?.velocity = to 
     }
     
     func returnToStart() {
         power = 0
         physicsComponent?.stopMovement() 
-        if let entryPipe = geometryComponent?.spriteNode?.scene?.childNode(withName: "entryPipe") {
-            geometryComponent?.spriteNode?.position = entryPipe.position
+        if let entryPipe = geometryComponent?.node?.scene?.childNode(withName: "entryPipe") {
+            geometryComponent?.node?.position.x = entryPipe.position.x + 300 * cos(entryPipe.zRotation + CGFloat.pi / 2)
+            geometryComponent?.node?.position.y = entryPipe.position.y + 300 * sin(entryPipe.zRotation + CGFloat.pi / 2)
         }
     }
     
     func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let selectedNodes = game.scene?.nodes(at: touches.first!.location(in: (game.scene)!))
-        applyingPowerToBall = selectedNodes!.first?.name == "ball" && physicsComponent?.physicsBody?.allContactedBodies().count == 1 
+        applyingPowerToBall = selectedNodes!.first?.name == "ball" && physicsComponent?.physicsBody?.allContactedBodies().count == 1
+    }
+    
+    func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard touches.count == 1 && applyingPowerToBall else {
+            return
+        }
+        evaluateBallPower(touchLoc: (touches.first?.location(in: game.scene!))!)
     }
         
     func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if applyingPowerToBall && power > 0 {
             game.stateMachine.enter(ShootingState.self)
         }
-        
+
         applyingPowerToBall = false
-    }
-    
-    override func update(deltaTime seconds: TimeInterval) {  
-        if applyingPowerToBall  {
-            increaseBallPower()  
-            increasePowerBarWidth()
-        }
     }
     
 }

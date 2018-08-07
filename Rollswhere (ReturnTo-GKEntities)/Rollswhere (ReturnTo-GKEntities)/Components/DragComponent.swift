@@ -17,9 +17,9 @@ class DragComponent: GKComponent {
     func evaluateDrag(touch: UITouch) {
         let touchLocation = touch.location(in: game.scene!)
         let prevTouchLocation = touch.previousLocation(in: game.scene!)
-        if let block = geometryComponent?.spriteNode {
+        if let block = geometryComponent?.node {
             block.run(.moveBy(x: touchLocation.x - prevTouchLocation.x, y: touchLocation.y - prevTouchLocation.y, duration: 0))
-        }  
+        }
     }
     
     func evaluateRotation(touch1: UITouch, touch2: UITouch) {
@@ -30,16 +30,25 @@ class DragComponent: GKComponent {
         let iTheta = atan((t1PrevLoc.y - t2PrevLoc.y) / (t1PrevLoc.x - t2PrevLoc.x))
         let fTheta = atan((t1Loc.y - t2Loc.y) / (t1Loc.x - t2Loc.x))
         let dTheta = fTheta - iTheta
-        if let block = geometryComponent?.spriteNode {
+        if let block = geometryComponent?.node {
             block.run(.rotate(byAngle: dTheta, duration: 0))
-        }
+        }    
     }
     
     func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let block = geometryComponent?.node {
+            block.physicsBody?.pinned = false
+        }
         switch touches.count {
             case 1: evaluateDrag(touch: touches.first!)
             case 2: evaluateRotation(touch1: touches.first!, touch2: touches.reversed().first!)
             default: break
+        }
+    }
+    
+    func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let block = geometryComponent?.node {
+            block.physicsBody?.pinned = true  
         }
     }
         

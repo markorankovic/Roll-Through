@@ -11,8 +11,21 @@ import GameplayKit
 
 class GameScene: SKScene {
     
+    func setCameraScale(xScale: CGFloat, yScale: CGFloat) {
+        camera?.xScale = xScale
+        camera?.yScale = yScale
+    }
+    
     override func didMove(to view: SKView) {
-        game.stateMachine.enter(ReturnState.self)  
+        
+        let aspectRatio = view.frame.width / view.frame.height
+        
+        switch aspectRatio {
+        case 16/9: setCameraScale(xScale: 1920 / view.frame.width, yScale: 1080 / view.frame.height)
+        default: setCameraScale(xScale: 1920 / view.frame.width, yScale: 1920 / view.frame.width)
+        } 
+        
+        game.stateMachine.enter(ReturnState.self)
     } 
     
 }  

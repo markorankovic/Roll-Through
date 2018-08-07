@@ -12,7 +12,7 @@ extension SKPhysicsBody {
     
     var isResting: Bool {
         let v = hypot(velocity.dx, velocity.dy)
-        return abs(v) < 0.0001 && allContactedBodies().count >= 1 && !game.ballInsideNode(nodeName: "entryPipe")    
+        return abs(v) < 0.01 && allContactedBodies().count >= 1 && !game.ballInsideNode(nodeName: "entryPipe")
     }  
     
 }
@@ -25,16 +25,20 @@ class ReturnState: GameState {
     
     override func didEnter(from previousState: GKState?) {
         game.setDraggableEntitiesToNotCollide() 
-        ball?.component(ofType: PlayerControlComponent.self)?.returnToStart() 
+        ball?.component(ofType: PlayerControlComponent.self)?.returnToStart()
+        let electricGates = game.entities.filter({ $0.component(ofType: ElectricGateControlComponent.self) != nil })
+        for electricGate in electricGates {
+            electricGate.component(ofType: ElectricGateControlComponent.self)?.closeGate() 
+        }
         print("Entered return")
-    } 
-    
+    }
+        
     override func update(deltaTime seconds: TimeInterval) {
         if let ballAtRest = ball?.component(ofType: PhysicsComponent.self)?.physicsBody?.isResting {
             if ballAtRest {
                 stateMachine?.enter(WaitingState.self)
             }
-        } 
+        }
     }
     
 }

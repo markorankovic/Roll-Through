@@ -7,14 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AD33440820E06FF60013293B /* Level1.sks in Resources */ = {isa = PBXBuildFile; fileRef = AD33440720E06FF60013293B /* Level1.sks */; };
+		AD06D26820F7C4E20033958C /* Level5.sks in Resources */ = {isa = PBXBuildFile; fileRef = AD06D26720F7C4E20033958C /* Level5.sks */; };
+		AD0A4A0A20EB76230084B543 /* FullPipeControlComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0A4A0920EB76230084B543 /* FullPipeControlComponent.swift */; };
+		AD12A62420E5C35C00363629 /* pauseButton.png in Resources */ = {isa = PBXBuildFile; fileRef = AD12A62320E5C35C00363629 /* pauseButton.png */; };
+		AD1C03152103718700ED53D5 /* SpaceShipBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = AD1C03142103718700ED53D5 /* SpaceShipBackground.png */; };
+		AD29EF6B210B4AA200641BA5 /* Level1.sks in Resources */ = {isa = PBXBuildFile; fileRef = AD29EF67210B4AA200641BA5 /* Level1.sks */; };
+		AD29EF6C210B4AA200641BA5 /* Level4.sks in Resources */ = {isa = PBXBuildFile; fileRef = AD29EF68210B4AA200641BA5 /* Level4.sks */; };
+		AD29EF6D210B4AA200641BA5 /* Level3.sks in Resources */ = {isa = PBXBuildFile; fileRef = AD29EF69210B4AA200641BA5 /* Level3.sks */; };
+		AD29EF6E210B4AA200641BA5 /* Level2.sks in Resources */ = {isa = PBXBuildFile; fileRef = AD29EF6A210B4AA200641BA5 /* Level2.sks */; };
+		AD330D5F20EDAF4300848CDB /* fourthQuarterPipe.png in Resources */ = {isa = PBXBuildFile; fileRef = AD330D5B20EDAF4300848CDB /* fourthQuarterPipe.png */; };
+		AD330D6020EDAF4300848CDB /* secondQuarterPipe.png in Resources */ = {isa = PBXBuildFile; fileRef = AD330D5C20EDAF4300848CDB /* secondQuarterPipe.png */; };
+		AD330D6120EDAF4300848CDB /* firstQuarterPipe.png in Resources */ = {isa = PBXBuildFile; fileRef = AD330D5D20EDAF4300848CDB /* firstQuarterPipe.png */; };
+		AD330D6220EDAF4300848CDB /* thirdQuarterPipe.png in Resources */ = {isa = PBXBuildFile; fileRef = AD330D5E20EDAF4300848CDB /* thirdQuarterPipe.png */; };
+		AD439C4B2118FFD40062EDF6 /* speedBoost.png in Resources */ = {isa = PBXBuildFile; fileRef = AD439C4A2118FFD40062EDF6 /* speedBoost.png */; };
+		AD439C4D211902D30062EDF6 /* SpeedBoost.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD439C4C211902D30062EDF6 /* SpeedBoost.swift */; };
+		AD493F8D210241960018CAEF /* ropeSeg.png in Resources */ = {isa = PBXBuildFile; fileRef = AD493F8C210241960018CAEF /* ropeSeg.png */; };
+		AD493F90210268900018CAEF /* SpeedBoostComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD493F8F210268900018CAEF /* SpeedBoostComponent.swift */; };
+		AD6A58D32108051C0013E010 /* PortalSystemControlComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6A58D22108051C0013E010 /* PortalSystemControlComponent.swift */; };
+		AD6A58D5210808120013E010 /* PortalSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6A58D4210808120013E010 /* PortalSystem.swift */; };
 		AD7050BC20DAB08900013E96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7050BB20DAB08900013E96 /* AppDelegate.swift */; };
 		AD7050C420DAB08900013E96 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7050C320DAB08900013E96 /* GameViewController.swift */; };
 		AD7050C720DAB08900013E96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD7050C520DAB08900013E96 /* Main.storyboard */; };
 		AD7050C920DAB08B00013E96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD7050C820DAB08B00013E96 /* Assets.xcassets */; };
 		AD7050CC20DAB08B00013E96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD7050CA20DAB08B00013E96 /* LaunchScreen.storyboard */; };
 		AD7050D420DAB1D100013E96 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7050D320DAB1D100013E96 /* Ball.swift */; };
-		AD7050D720DAB23E00013E96 /* ShapeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7050D620DAB23E00013E96 /* ShapeComponent.swift */; };
+		AD7050D720DAB23E00013E96 /* GeometryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7050D620DAB23E00013E96 /* GeometryComponent.swift */; };
 		AD7050D920DAB26000013E96 /* PlayerControlComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7050D820DAB26000013E96 /* PlayerControlComponent.swift */; };
 		AD7050DB20DAB27A00013E96 /* PhysicsComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7050DA20DAB27A00013E96 /* PhysicsComponent.swift */; };
 		AD7050DE20DABA1A00013E96 /* BounceObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7050DD20DABA1A00013E96 /* BounceObject.swift */; };
@@ -26,11 +43,45 @@
 		AD7050FB20DADDB500013E96 /* ShootingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7050F520DADDB500013E96 /* ShootingState.swift */; };
 		AD7050FD20DADE1C00013E96 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7050FC20DADE1C00013E96 /* Game.swift */; };
 		AD70510420DAF77400013E96 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD70510320DAF77400013E96 /* GameScene.swift */; };
+		AD71CEE0210968B400236A97 /* entryPortal.png in Resources */ = {isa = PBXBuildFile; fileRef = AD71CEDF210968B400236A97 /* entryPortal.png */; };
+		AD71CEE2210968C400236A97 /* exitPortal.png in Resources */ = {isa = PBXBuildFile; fileRef = AD71CEE1210968C400236A97 /* exitPortal.png */; };
+		AD71CEE52109775000236A97 /* PortalDust.sks in Resources */ = {isa = PBXBuildFile; fileRef = AD71CEE32109775000236A97 /* PortalDust.sks */; };
+		AD71CEE921097B1700236A97 /* ParticleDust.png in Resources */ = {isa = PBXBuildFile; fileRef = AD71CEE821097B1700236A97 /* ParticleDust.png */; };
+		AD7248A72104192B0066E469 /* TunnelSpeedBoost.sks in Resources */ = {isa = PBXBuildFile; fileRef = AD7248A62104192B0066E469 /* TunnelSpeedBoost.sks */; };
+		AD74090720F51A5200F19300 /* quarterPipe.png in Resources */ = {isa = PBXBuildFile; fileRef = AD74090620F51A5200F19300 /* quarterPipe.png */; };
+		AD74090920F5255100F19300 /* BaseLevel.sks in Resources */ = {isa = PBXBuildFile; fileRef = AD74090820F5255100F19300 /* BaseLevel.sks */; };
+		AD74090B20F64FA600F19300 /* tunnelArc.png in Resources */ = {isa = PBXBuildFile; fileRef = AD74090A20F64FA600F19300 /* tunnelArc.png */; };
+		AD74090D20F65F2600F19300 /* tunnelArcFlipped.png in Resources */ = {isa = PBXBuildFile; fileRef = AD74090C20F65F2600F19300 /* tunnelArcFlipped.png */; };
+		ADA2D02C21151D51007BA8C2 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = ADA2D02B21151D51007BA8C2 /* ball.png */; };
 		ADC5B38920DDE94100B41DFB /* DragComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC5B38820DDE94100B41DFB /* DragComponent.swift */; };
+		ADC62456210A303F00976130 /* ElectricGateControlComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC62455210A303F00976130 /* ElectricGateControlComponent.swift */; };
+		ADC62458210A360500976130 /* ElectricGate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC62457210A360500976130 /* ElectricGate.swift */; };
+		ADC6245A210A4E5D00976130 /* pipe.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC62459210A4E5D00976130 /* pipe.png */; };
+		ADC74F2A20F7911B005F694A /* Level4.sks in Resources */ = {isa = PBXBuildFile; fileRef = ADC74F2920F7911B005F694A /* Level4.sks */; };
+		ADDF3DF320F6DA8300CA922D /* Level1.sks in Resources */ = {isa = PBXBuildFile; fileRef = ADDF3DF220F6DA8200CA922D /* Level1.sks */; };
+		ADDF3DF520F6E0B200CA922D /* Level2.sks in Resources */ = {isa = PBXBuildFile; fileRef = ADDF3DF420F6E0B200CA922D /* Level2.sks */; };
+		ADDF3DF720F6E1C200CA922D /* Level3.sks in Resources */ = {isa = PBXBuildFile; fileRef = ADDF3DF620F6E1C200CA922D /* Level3.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AD33440720E06FF60013293B /* Level1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level1.sks; sourceTree = "<group>"; };
+		AD06D26720F7C4E20033958C /* Level5.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level5.sks; sourceTree = "<group>"; };
+		AD0A4A0920EB76230084B543 /* FullPipeControlComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullPipeControlComponent.swift; sourceTree = "<group>"; };
+		AD12A62320E5C35C00363629 /* pauseButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseButton.png; sourceTree = "<group>"; };
+		AD1C03142103718700ED53D5 /* SpaceShipBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SpaceShipBackground.png; sourceTree = "<group>"; };
+		AD29EF67210B4AA200641BA5 /* Level1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level1.sks; sourceTree = "<group>"; };
+		AD29EF68210B4AA200641BA5 /* Level4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level4.sks; sourceTree = "<group>"; };
+		AD29EF69210B4AA200641BA5 /* Level3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level3.sks; sourceTree = "<group>"; };
+		AD29EF6A210B4AA200641BA5 /* Level2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level2.sks; sourceTree = "<group>"; };
+		AD330D5B20EDAF4300848CDB /* fourthQuarterPipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fourthQuarterPipe.png; sourceTree = "<group>"; };
+		AD330D5C20EDAF4300848CDB /* secondQuarterPipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = secondQuarterPipe.png; sourceTree = "<group>"; };
+		AD330D5D20EDAF4300848CDB /* firstQuarterPipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = firstQuarterPipe.png; sourceTree = "<group>"; };
+		AD330D5E20EDAF4300848CDB /* thirdQuarterPipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thirdQuarterPipe.png; sourceTree = "<group>"; };
+		AD439C4A2118FFD40062EDF6 /* speedBoost.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speedBoost.png; sourceTree = "<group>"; };
+		AD439C4C211902D30062EDF6 /* SpeedBoost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedBoost.swift; sourceTree = "<group>"; };
+		AD493F8C210241960018CAEF /* ropeSeg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ropeSeg.png; sourceTree = "<group>"; };
+		AD493F8F210268900018CAEF /* SpeedBoostComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedBoostComponent.swift; sourceTree = "<group>"; };
+		AD6A58D22108051C0013E010 /* PortalSystemControlComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalSystemControlComponent.swift; sourceTree = "<group>"; };
+		AD6A58D4210808120013E010 /* PortalSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalSystem.swift; sourceTree = "<group>"; };
 		AD7050B820DAB08900013E96 /* Rollswhere (ReturnTo-GKEntities).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rollswhere (ReturnTo-GKEntities).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD7050BB20DAB08900013E96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD7050C320DAB08900013E96 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -39,7 +90,7 @@
 		AD7050CB20DAB08B00013E96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD7050CD20DAB08B00013E96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD7050D320DAB1D100013E96 /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
-		AD7050D620DAB23E00013E96 /* ShapeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeComponent.swift; sourceTree = "<group>"; };
+		AD7050D620DAB23E00013E96 /* GeometryComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryComponent.swift; sourceTree = "<group>"; };
 		AD7050D820DAB26000013E96 /* PlayerControlComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerControlComponent.swift; sourceTree = "<group>"; };
 		AD7050DA20DAB27A00013E96 /* PhysicsComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsComponent.swift; sourceTree = "<group>"; };
 		AD7050DD20DABA1A00013E96 /* BounceObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BounceObject.swift; sourceTree = "<group>"; };
@@ -51,7 +102,24 @@
 		AD7050F520DADDB500013E96 /* ShootingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShootingState.swift; sourceTree = "<group>"; };
 		AD7050FC20DADE1C00013E96 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		AD70510320DAF77400013E96 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = "../../Rollswhere (W GameplayKit)/Rollswhere (W GameplayKit)/GameScene.swift"; sourceTree = "<group>"; };
+		AD71CEDF210968B400236A97 /* entryPortal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = entryPortal.png; sourceTree = "<group>"; };
+		AD71CEE1210968C400236A97 /* exitPortal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exitPortal.png; sourceTree = "<group>"; };
+		AD71CEE32109775000236A97 /* PortalDust.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PortalDust.sks; sourceTree = "<group>"; };
+		AD71CEE821097B1700236A97 /* ParticleDust.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ParticleDust.png; sourceTree = "<group>"; };
+		AD7248A62104192B0066E469 /* TunnelSpeedBoost.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TunnelSpeedBoost.sks; sourceTree = "<group>"; };
+		AD74090620F51A5200F19300 /* quarterPipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quarterPipe.png; sourceTree = "<group>"; };
+		AD74090820F5255100F19300 /* BaseLevel.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BaseLevel.sks; sourceTree = "<group>"; };
+		AD74090A20F64FA600F19300 /* tunnelArc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tunnelArc.png; sourceTree = "<group>"; };
+		AD74090C20F65F2600F19300 /* tunnelArcFlipped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tunnelArcFlipped.png; sourceTree = "<group>"; };
+		ADA2D02B21151D51007BA8C2 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
 		ADC5B38820DDE94100B41DFB /* DragComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragComponent.swift; sourceTree = "<group>"; };
+		ADC62455210A303F00976130 /* ElectricGateControlComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectricGateControlComponent.swift; sourceTree = "<group>"; };
+		ADC62457210A360500976130 /* ElectricGate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectricGate.swift; sourceTree = "<group>"; };
+		ADC62459210A4E5D00976130 /* pipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pipe.png; sourceTree = "<group>"; };
+		ADC74F2920F7911B005F694A /* Level4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level4.sks; sourceTree = "<group>"; };
+		ADDF3DF220F6DA8200CA922D /* Level1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level1.sks; sourceTree = "<group>"; };
+		ADDF3DF420F6E0B200CA922D /* Level2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level2.sks; sourceTree = "<group>"; };
+		ADDF3DF620F6E1C200CA922D /* Level3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level3.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +133,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD0B588220E5507400FEA071 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				AD1C03132103716500ED53D5 /* Backgrounds */,
+				AD439C4A2118FFD40062EDF6 /* speedBoost.png */,
+				ADA2D02B21151D51007BA8C2 /* ball.png */,
+				ADC62459210A4E5D00976130 /* pipe.png */,
+				AD71CEE821097B1700236A97 /* ParticleDust.png */,
+				AD71CEE1210968C400236A97 /* exitPortal.png */,
+				AD71CEDF210968B400236A97 /* entryPortal.png */,
+				AD493F8C210241960018CAEF /* ropeSeg.png */,
+				AD74090C20F65F2600F19300 /* tunnelArcFlipped.png */,
+				AD74090A20F64FA600F19300 /* tunnelArc.png */,
+				AD74090620F51A5200F19300 /* quarterPipe.png */,
+				AD330D5D20EDAF4300848CDB /* firstQuarterPipe.png */,
+				AD330D5B20EDAF4300848CDB /* fourthQuarterPipe.png */,
+				AD330D5C20EDAF4300848CDB /* secondQuarterPipe.png */,
+				AD330D5E20EDAF4300848CDB /* thirdQuarterPipe.png */,
+				AD12A62320E5C35C00363629 /* pauseButton.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		AD1C03132103716500ED53D5 /* Backgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				AD1C03142103718700ED53D5 /* SpaceShipBackground.png */,
+			);
+			path = Backgrounds;
+			sourceTree = "<group>";
+		};
+		AD493F8E210254D00018CAEF /* SampleLevels */ = {
+			isa = PBXGroup;
+			children = (
+				AD06D26720F7C4E20033958C /* Level5.sks */,
+				ADC74F2920F7911B005F694A /* Level4.sks */,
+				ADDF3DF620F6E1C200CA922D /* Level3.sks */,
+				ADDF3DF420F6E0B200CA922D /* Level2.sks */,
+				ADDF3DF220F6DA8200CA922D /* Level1.sks */,
+			);
+			path = SampleLevels;
+			sourceTree = "<group>";
+		};
 		AD7050AF20DAB08900013E96 = {
 			isa = PBXGroup;
 			children = (
@@ -84,18 +195,22 @@
 		AD7050BA20DAB08900013E96 /* Rollswhere (ReturnTo-GKEntities) */ = {
 			isa = PBXGroup;
 			children = (
+				AD71CEE72109783000236A97 /* Effects */,
+				AD7248A52104192B0066E469 /* Actions */,
 				AD7050CD20DAB08B00013E96 /* Info.plist */,
 				AD7050BB20DAB08900013E96 /* AppDelegate.swift */,
 				AD7050FC20DADE1C00013E96 /* Game.swift */,
 				AD70510320DAF77400013E96 /* GameScene.swift */,
 				AD7050C320DAB08900013E96 /* GameViewController.swift */,
 				AD7050C820DAB08B00013E96 /* Assets.xcassets */,
+				AD7050C520DAB08900013E96 /* Main.storyboard */,
+				AD0B588220E5507400FEA071 /* Images */,
 				AD7050D520DAB23200013E96 /* Components */,
 				AD7050DC20DAB79000013E96 /* Entities */,
 				AD7050EF20DADDB500013E96 /* GameStates */,
 				AD7050CA20DAB08B00013E96 /* LaunchScreen.storyboard */,
+				AD493F8E210254D00018CAEF /* SampleLevels */,
 				AD7050FE20DAECD000013E96 /* Levels */,
-				AD7050C520DAB08900013E96 /* Main.storyboard */,
 			);
 			path = "Rollswhere (ReturnTo-GKEntities)";
 			sourceTree = "<group>";
@@ -103,10 +218,14 @@
 		AD7050D520DAB23200013E96 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				AD7050D620DAB23E00013E96 /* ShapeComponent.swift */,
+				AD7050D620DAB23E00013E96 /* GeometryComponent.swift */,
 				AD7050D820DAB26000013E96 /* PlayerControlComponent.swift */,
 				AD7050DA20DAB27A00013E96 /* PhysicsComponent.swift */,
 				ADC5B38820DDE94100B41DFB /* DragComponent.swift */,
+				AD0A4A0920EB76230084B543 /* FullPipeControlComponent.swift */,
+				AD493F8F210268900018CAEF /* SpeedBoostComponent.swift */,
+				AD6A58D22108051C0013E010 /* PortalSystemControlComponent.swift */,
+				ADC62455210A303F00976130 /* ElectricGateControlComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -116,6 +235,9 @@
 			children = (
 				AD7050DD20DABA1A00013E96 /* BounceObject.swift */,
 				AD7050D320DAB1D100013E96 /* Ball.swift */,
+				AD6A58D4210808120013E010 /* PortalSystem.swift */,
+				ADC62457210A360500976130 /* ElectricGate.swift */,
+				AD439C4C211902D30062EDF6 /* SpeedBoost.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -137,9 +259,29 @@
 		AD7050FE20DAECD000013E96 /* Levels */ = {
 			isa = PBXGroup;
 			children = (
-				AD33440720E06FF60013293B /* Level1.sks */,
+				AD74090820F5255100F19300 /* BaseLevel.sks */,
+				AD29EF67210B4AA200641BA5 /* Level1.sks */,
+				AD29EF6A210B4AA200641BA5 /* Level2.sks */,
+				AD29EF69210B4AA200641BA5 /* Level3.sks */,
+				AD29EF68210B4AA200641BA5 /* Level4.sks */,
 			);
 			path = Levels;
+			sourceTree = "<group>";
+		};
+		AD71CEE72109783000236A97 /* Effects */ = {
+			isa = PBXGroup;
+			children = (
+				AD71CEE32109775000236A97 /* PortalDust.sks */,
+			);
+			path = Effects;
+			sourceTree = "<group>";
+		};
+		AD7248A52104192B0066E469 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				AD7248A62104192B0066E469 /* TunnelSpeedBoost.sks */,
+			);
+			path = Actions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,9 +343,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD7050C720DAB08900013E96 /* Main.storyboard in Resources */,
+				AD71CEE2210968C400236A97 /* exitPortal.png in Resources */,
+				AD29EF6B210B4AA200641BA5 /* Level1.sks in Resources */,
+				AD7248A72104192B0066E469 /* TunnelSpeedBoost.sks in Resources */,
+				AD12A62420E5C35C00363629 /* pauseButton.png in Resources */,
+				AD1C03152103718700ED53D5 /* SpaceShipBackground.png in Resources */,
+				AD74090920F5255100F19300 /* BaseLevel.sks in Resources */,
+				ADDF3DF720F6E1C200CA922D /* Level3.sks in Resources */,
+				AD71CEE921097B1700236A97 /* ParticleDust.png in Resources */,
+				AD06D26820F7C4E20033958C /* Level5.sks in Resources */,
+				ADDF3DF520F6E0B200CA922D /* Level2.sks in Resources */,
 				AD7050C920DAB08B00013E96 /* Assets.xcassets in Resources */,
-				AD33440820E06FF60013293B /* Level1.sks in Resources */,
+				AD74090720F51A5200F19300 /* quarterPipe.png in Resources */,
+				ADDF3DF320F6DA8300CA922D /* Level1.sks in Resources */,
+				AD74090D20F65F2600F19300 /* tunnelArcFlipped.png in Resources */,
+				AD330D6220EDAF4300848CDB /* thirdQuarterPipe.png in Resources */,
+				ADC74F2A20F7911B005F694A /* Level4.sks in Resources */,
+				AD29EF6C210B4AA200641BA5 /* Level4.sks in Resources */,
+				AD29EF6E210B4AA200641BA5 /* Level2.sks in Resources */,
+				AD330D6120EDAF4300848CDB /* firstQuarterPipe.png in Resources */,
+				AD74090B20F64FA600F19300 /* tunnelArc.png in Resources */,
+				AD29EF6D210B4AA200641BA5 /* Level3.sks in Resources */,
+				ADC6245A210A4E5D00976130 /* pipe.png in Resources */,
+				AD330D5F20EDAF4300848CDB /* fourthQuarterPipe.png in Resources */,
+				AD439C4B2118FFD40062EDF6 /* speedBoost.png in Resources */,
+				AD71CEE0210968B400236A97 /* entryPortal.png in Resources */,
+				AD330D6020EDAF4300848CDB /* secondQuarterPipe.png in Resources */,
+				ADA2D02C21151D51007BA8C2 /* ball.png in Resources */,
 				AD7050CC20DAB08B00013E96 /* LaunchScreen.storyboard in Resources */,
+				AD493F8D210241960018CAEF /* ropeSeg.png in Resources */,
+				AD71CEE52109775000236A97 /* PortalDust.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,17 +386,24 @@
 				AD70510420DAF77400013E96 /* GameScene.swift in Sources */,
 				AD7050D420DAB1D100013E96 /* Ball.swift in Sources */,
 				AD7050FD20DADE1C00013E96 /* Game.swift in Sources */,
+				ADC62458210A360500976130 /* ElectricGate.swift in Sources */,
 				AD7050F720DADDB500013E96 /* WaitingState.swift in Sources */,
+				AD439C4D211902D30062EDF6 /* SpeedBoost.swift in Sources */,
 				AD7050DB20DAB27A00013E96 /* PhysicsComponent.swift in Sources */,
 				AD7050DE20DABA1A00013E96 /* BounceObject.swift in Sources */,
+				AD0A4A0A20EB76230084B543 /* FullPipeControlComponent.swift in Sources */,
 				AD7050FA20DADDB500013E96 /* TransitionState.swift in Sources */,
 				AD7050D920DAB26000013E96 /* PlayerControlComponent.swift in Sources */,
+				AD6A58D32108051C0013E010 /* PortalSystemControlComponent.swift in Sources */,
 				AD7050C420DAB08900013E96 /* GameViewController.swift in Sources */,
 				AD7050F820DADDB500013E96 /* ReturnState.swift in Sources */,
+				ADC62456210A303F00976130 /* ElectricGateControlComponent.swift in Sources */,
 				AD7050BC20DAB08900013E96 /* AppDelegate.swift in Sources */,
 				AD7050F920DADDB500013E96 /* GameState.swift in Sources */,
-				AD7050D720DAB23E00013E96 /* ShapeComponent.swift in Sources */,
+				AD7050D720DAB23E00013E96 /* GeometryComponent.swift in Sources */,
 				AD7050FB20DADDB500013E96 /* ShootingState.swift in Sources */,
+				AD6A58D5210808120013E010 /* PortalSystem.swift in Sources */,
+				AD493F90210268900018CAEF /* SpeedBoostComponent.swift in Sources */,
 				AD7050F620DADDB500013E96 /* PauseState.swift in Sources */,
 				ADC5B38920DDE94100B41DFB /* DragComponent.swift in Sources */,
 			);
