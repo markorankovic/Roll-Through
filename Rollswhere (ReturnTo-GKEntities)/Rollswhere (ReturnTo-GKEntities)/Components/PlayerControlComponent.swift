@@ -95,25 +95,25 @@ class PlayerControlComponent: GKComponent {
         }
     }
     
-    func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let selectedNodes = game.scene?.nodes(at: touches.first!.location(in: (game.scene)!))
-        applyingPowerToBall = selectedNodes!.first?.name == "ball" && physicsComponent?.physicsBody?.allContactedBodies().count == 1
-    }
-    
-    func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard touches.count == 1 && applyingPowerToBall else {
-            return
-        }
-        evaluateBallPower(touchLoc: (touches.first?.location(in: game.scene!))!)
-    }
-        
-    func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if applyingPowerToBall && power > 0 {
-            game.stateMachine.enter(ShootingState.self)
-        }
-
-        applyingPowerToBall = false
-    }
+//    func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        let selectedNodes = game.scene?.nodes(at: touches.first!.location(in: (game.scene)!))
+//        applyingPowerToBall = selectedNodes!.first?.name == "ball" && physicsComponent?.physicsBody?.allContactedBodies().count == 1
+//    }
+//
+//    func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        guard touches.count == 1 && applyingPowerToBall else {
+//            return
+//        }
+//        evaluateBallPower(touchLoc: (touches.first?.location(in: game.scene!))!)
+//    }
+//
+//    func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        if applyingPowerToBall && power > 0 {
+//            game.stateMachine.enter(ShootingState.self)
+//        }
+//
+//        applyingPowerToBall = false
+//    }
     
 }
 

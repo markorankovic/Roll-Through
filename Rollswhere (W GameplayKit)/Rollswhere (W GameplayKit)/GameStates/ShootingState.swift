@@ -14,9 +14,9 @@ class ShootingState: GameState {
         return stateClass == ReturnState.self || stateClass == TransitionState.self
     }
 
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        stateMachine?.enter(ReturnState.self)
-    }
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        stateMachine?.enter(ReturnState.self)
+//    }
 
     override func didEnter(from previousState: GKState?) {
         game.setDraggableEntitiesToCollide()

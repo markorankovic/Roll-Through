@@ -24,8 +24,14 @@ class GameViewController: UIViewController {
             view.showsFPS = true
             view.showsNodeCount = true
         }
+        
     }
-
+    
+//    @IBAction func swipeGestureHandler(_ gestureRecognizer: UISwipeGestureRecognizer) {
+//        print("swipe detected")
+//        game.scene?.handleSwipe(gestureRecognizer)
+//    } 
+    
     override var shouldAutorotate: Bool {
         return true
     }
