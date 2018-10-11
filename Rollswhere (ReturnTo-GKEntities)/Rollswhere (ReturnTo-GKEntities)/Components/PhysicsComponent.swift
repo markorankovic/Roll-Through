@@ -16,10 +16,10 @@ class PhysicsComponent: GKComponent {
     
     var physicsBody: SKPhysicsBody?
     
-    init(physicsBody: SKPhysicsBody) {
+    init(physicsBody: SKPhysicsBody?) {
         super.init()
         self.physicsBody = physicsBody
-    }
+    } 
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -27,8 +27,16 @@ class PhysicsComponent: GKComponent {
     
     func updateGeometryComponent() {
         if let geometryComponent = geometryComponent {
-            geometryComponent.spriteNode?.physicsBody = physicsBody
+            geometryComponent.node?.physicsBody = physicsBody
         }
+    }
+    
+    func activateCollision() {
+        physicsBody?.categoryBitMask = 1 
+    }
+    
+    func deactivateCollision() {
+        physicsBody?.categoryBitMask = 0 
     }
     
     func stopMovement() {

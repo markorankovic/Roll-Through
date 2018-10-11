@@ -14,11 +14,11 @@ class GameState: GKState {
         return game.entities.first(where: { $0 is Ball }) as? Ball
     }
     
-    func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) { }
-    
-    func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) { }
-    
-    func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) { }
+//    func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) { }
+//
+//    func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) { }
+//
+//    func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) { }
     
 }
 

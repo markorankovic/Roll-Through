@@ -14,16 +14,16 @@ class Ball: GKEntity {
         super.init()
     }
     
-    convenience init(spriteNode: SKSpriteNode) {
+    convenience init(node: SKNode) {
         self.init()
-        addComponent(GeometryComponent(spriteNode: spriteNode))
+        addComponent(GeometryComponent(node: node))
         addComponent(PlayerControlComponent())
-        spriteNode.physicsBody?.collisionBitMask = 1
-        addComponent(PhysicsComponent(physicsBody: spriteNode.physicsBody!))  
+        node.physicsBody?.collisionBitMask = 1
+        addComponent(PhysicsComponent(physicsBody: node.physicsBody!))  
     }  
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
+    } 
     
 }

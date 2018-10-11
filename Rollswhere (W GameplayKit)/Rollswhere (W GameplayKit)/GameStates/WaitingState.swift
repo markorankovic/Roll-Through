@@ -31,34 +31,38 @@ class WaitingState: GameState {
                 touchedNodes.insert(node)
             }
         }
-        let draggingBlocks = game.entities.filter({ $0 is BounceObject && $0.component(ofType: DragComponent.self) != nil && touchedNodes.contains(($0.component(ofType: GeometryComponent.self)?.spriteNode)!) })   
+        let draggingBlocks = game.entities.filter({ $0 is BounceObject && $0.component(ofType: DragComponent.self) != nil && touchedNodes.contains(($0.component(ofType: GeometryComponent.self)?.node)!) })   
         return draggingBlocks
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        ball?.component(ofType: PlayerControlComponent.self)?.touchesBegan(touches, with: event)
-        draggingBlocks = getDraggingBlocks(touches: touches)
-    }
-
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for block in draggingBlocks {
-            block.component(ofType: DragComponent.self)?.touchesMoved(touches, with: event)
-        }    
-    }
-
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        ball?.component(ofType: PlayerControlComponent.self)?.touchesEnded(touches, with: event)
-        draggingBlocks = getDraggingBlocks(touches: touches)
-    }
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        ball?.component(ofType: PlayerControlComponent.self)?.touchesBegan(touches, with: event)
+//        draggingBlocks = getDraggingBlocks(touches: touches)
+//    }
+// 
+//    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        ball?.component(ofType: PlayerControlComponent.self)?.touchesMoved(touches, with: event)
+//        for block in draggingBlocks {
+//            block.component(ofType: DragComponent.self)?.touchesMoved(touches, with: event)
+//        }
+//    }
+//    
+//    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        ball?.component(ofType: PlayerControlComponent.self)?.touchesEnded(touches, with: event)
+//        draggingBlocks = getDraggingBlocks(touches: touches)
+//        for block in draggingBlocks {
+//            block.component(ofType: DragComponent.self)?.touchesEnded(touches, with: event)
+//        }  
+//    }
 
     override func didEnter(from previousState: GKState?) {
         ball?.component(ofType: PlayerControlComponent.self)?.resetPowerBar()  
         ball?.component(ofType: PlayerControlComponent.self)?.addPowerBar()
-        print("Entered waiting")  
+        print("Entered waiting")
     }
-
+    
     override func update(deltaTime seconds: TimeInterval) {
-        ball?.component(ofType: PlayerControlComponent.self)?.update(deltaTime: seconds)  
+        ball?.component(ofType: PlayerControlComponent.self)?.update(deltaTime: seconds) 
     }
 
 }

@@ -16,24 +16,28 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         if let view = self.view as? SKView {
-            view.presentScene(game.scene)  
+            view.presentScene(game.scene)    
             view.ignoresSiblingOrder = true
-            
+            view.preferredFramesPerSecond = 60
+            //view.showsPhysics = true 
+            view.showsFields = true 
             view.showsFPS = true
             view.showsNodeCount = true
         }
+        
     }
-
+    
+//    @IBAction func swipeGestureHandler(_ gestureRecognizer: UISwipeGestureRecognizer) {
+//        print("swipe detected")
+//        game.scene?.handleSwipe(gestureRecognizer)
+//    } 
+    
     override var shouldAutorotate: Bool {
         return true
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
-        } else {
-            return .all
-        }
+        return .landscapeLeft  
     }
 
     override func didReceiveMemoryWarning() {
